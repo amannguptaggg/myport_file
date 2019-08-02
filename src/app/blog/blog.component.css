@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.blogBox{
+    padding: 5px 5px;
+}
+.blog-Nav{
+    position: relative;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #7e57c2;
+}
+.blog-catgeory{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+
+}
+.blog-catgeory ul{
+     display: flex;
+     justify-content: center;
+}
+.blog-catgeory ul li{
+    float: left;
+    display: block;
+    margin: 5px 20px;
+}
+.blog-catgeory ul li a{
+    color: #fffffb;
+}
+.blog-catgeory ul li a:hover{
+   text-decoration: none;
+   color: #c62828;
+   font-weight: 300;
+}
+/* Blog List  */
+
+.blogpost-list{
+    display: flex;
+    justify-content: center;
+}
+.blogPost-tile{
+    margin: 10px 0px;
+    background-color:#e8f5e9;
+}
+.thumbanilImage{
+    max-width: 330px;
+    max-height: 330px;
+    float: left;
+}
+.blog-title{
+    margin: 5px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: blue;
+    font-size: 25px;
+}
+.blog-category-type{
+    margin: 10px 4px;
+  display: flex;
+  justify-content:left;
+  color: #494949;
+  font-size: 14px;
+}
+.post-date{
+    margin-right: 10px;
+}
+.post-category{
+    margin-left:20px;
+}
+
+/* Blog Links section */
+.postLinkSection{
+    margin: 15px 5px;
+    padding: 5px 5px;
+    background-color: #ede7f6;
+}
+.postLinkHeading{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+    text-decoration: underline;
+    padding: 2px 0px;
+}
+.postLinkImage{
+    max-width: 130px;
+    max-height: 160px;
+}
+.postImage{
+    display:inline-flex;
+    float: left;
+    
+}
+.postTitle{
+    display:inline-flex;
+    float:right;
+    box-sizing: border-box;
+   padding-left: 10px;
+   font-size: 15px;
+   color: black;
+}
+.linkPost{
+    background-color: #b2dfdb;
+    margin: 10px 0px;
+}

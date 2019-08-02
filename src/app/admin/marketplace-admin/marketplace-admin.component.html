@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="add-product-box">
+                <p class="add-product-heading">Add Product</p>
+                <div class="add-product">
+                    <form [formGroup]="productForm" class="product-form" (ngSubmit)="productSubmit(productForm.value)">
+                        <input type="text" placeholder="Input Image URL" formControlName="pro_img">
+                        <input type="text" placeholder="Input Product Name" formControlName="pro_name">
+                        <input type="text" placeholder="Input Description" formControlName="pro_description">
+                        <input type="text" placeholder="Input Price" formControlName="pro_price">
+                        <input type="text" placeholder="Input Product Link URL" formControlName="pro_URL">
+                        <button type="submit" class="btn btn-block btn-success" [disabled]="!productForm.valid">Save Item</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

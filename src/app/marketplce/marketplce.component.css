@@ -1,0 +1,64 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.market-nav{
+    position: relative;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #7e57c2;
+}
+.market-category{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+
+}
+.market-category ul{
+     display: flex;
+     justify-content: center;
+}
+.market-category ul li{
+    float: left;
+    display: block;
+    margin: 5px 20px;
+}
+.market-category ul li a{
+    color: #fffffb;
+}
+.market-category ul li a:hover{
+   text-decoration: none;
+   color: #c62828;
+   font-weight: 300;
+}
+
+/* Market place Items List */
+
+.item-container{
+   margin: 5px 0px;
+    background-color: #ede7f6;
+    padding: 10px 5px;
+
+}
+.product-image{
+    padding: 0px;
+    margin: 2px;
+    max-width:300px;
+    max-height: 300px;
+}
+
+.list-Item{
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
+.itemTitle{
+    display: flex;
+    justify-content: center
+}
+.itemDesc{
+    display: flex;
+    justify-content: center;
+    padding: 7px;
+}

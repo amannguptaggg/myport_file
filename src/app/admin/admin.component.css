@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.admin-sideMenu{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #1976d2;
+}
+
+.admin-sideMenu ul{
+    display: block;
+    align-self: center;
+    padding: 0;
+    margin: 0;
+}
+.admin-sideMenu ul li{
+    list-style-type: none;
+    align-self: center;
+    padding: 10px 0px;
+    display: block;
+    margin: 0;
+}
+.admin-sideMenu ul li:hover{
+    background-color:#ff8a65;
+}
+.admin-sideMenu ul li a{
+    margin: 0px 15px;
+    color: #fffffb;
+    font-family: 'Courier New', Courier, monospace;
+}
