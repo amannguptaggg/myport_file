@@ -12,4 +12,8 @@ export class ProductViewService {
    return this._fb.collection('amazon_products').snapshotChanges();
   }
 
+  getBlogPost() {
+    return this._fb.collection('blogPost').snapshotChanges();
+  }
+
 }

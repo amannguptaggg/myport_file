@@ -14,93 +14,19 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-1">
+       <div class="col-lg-12 items-list">
 
-        </div>
-        <div class="col-9">
-            <div class="item-container">
-                
-                    <div class="card-deck list-Item">
-                            <div class="card card-content" *ngFor="let item of allProduct">
-                              <img class="card-img-top product-image" src="{{item.pro_img}}" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title itemTitle">{{item.pro_name}}</h5>
-                                <p class="item-description pl-2">
-                                  Item Desc
-                                </p>
-                              </div>
-                              <div class="card-footer">
-                                <a href="{{item.pro_url}}" class="btn btn-block btn-success" target="_blank">Buy Now</a>
-                              </div>
-                            </div>
+           <div class="card item-list" *ngFor="let item of allProduct">
+               <img src="{{item.pro_img}}" class="card-img-top">
+               <div class="card-body">
+                   <div class="card-title itemTitle">{{item.pro_name}}</div>
+                   <div class="card-text itemText"><i class="fa fa-inr" aria-hidden="true"></i> {{item.pro_price}}</div>
+                   <div class="card-footer">
+                       <a class="btn btn-block btn-success buyBtn" href="{{item.pro_url}}" target="_blank">Buy Now</a>
+                   </div>
+               </div>
+           </div>
 
-
-                             <div class="card card-content">
-                              <img class="card-img-top" src="../../assets/images/imgThumbanil.png" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title itemTitle">Card title here</h5>
-                                <p class="item-description pl-2">
-                                   This is item description. <br>
-                                   Item Description
-                                </p>
-                              </div>
-                              <div class="card-footer">
-                                <button type="button" class="btn btn-block btn-success">Buy Now</button>
-                              </div>
-                            </div>
-                          </div>
-
-
-
-                          <div class="card-deck list-Item">
-                            <div class="card card-content">
-                              <img class="card-img-top" src="../../assets/images/imgThumbanil.png" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title itemTitle">Card title here</h5>
-                                <p class="item-description pl-2">
-                                   This is item description. <br>
-                                   Item Description
-                                </p>
-                              </div>
-                              <div class="card-footer">
-                                <button type="button" class="btn btn-block btn-success">Buy Now</button>
-                              </div>
-                            </div>
-                            <div class="card card-content">
-                              <img class="card-img-top" src="../../assets/images/imgThumbanil.png" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title itemTitle">Card title here</h5>
-                                <p class="item-description pl-2">
-                                   This is item description. <br>
-                                   Item Description
-                                </p>
-                              </div>
-                              <div class="card-footer">
-                                <button type="button" class="btn btn-block btn-success">Buy Now</button>
-                              </div>
-                            </div>
-
-
-                             <div class="card card-content">
-                              <img class="card-img-top" src="../../assets/images/imgThumbanil.png" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title itemTitle">Card title here</h5>
-                                <p class="item-description pl-2">
-                                   This is item description. <br>
-                                   Item Description
-                                </p>
-                              </div>
-                              <div class="card-footer">
-                                <button type="button" class="btn btn-block btn-success">Buy Now</button>
-                              </div>
-                            </div>
-            </div>
-
-            
-
-        </div>
-        <div class="col-lg-2">
-            
-            </div>
+       </div>
     </div>
 </div>

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.blogPost{
+    background-color: #f5f5f5;
+    height: 100%;
+    padding: 15px 30px;
+}
+.blog-title{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    /* text-decoration: underline;
+    text-decoration-color: #4caf50;
+    text-decoration-style: solid; */
+}
+.blog-type{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #00c853;
+    margin: 10px 5px;
+}
+.blog-content{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.6;
+}

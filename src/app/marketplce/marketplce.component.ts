@@ -8,7 +8,7 @@ import { ProductViewService } from '../product-view.service';
 })
 export class MarketplceComponent implements OnInit {
   allProduct:Array<any>;
-
+  index:any;
   constructor(private pService:ProductViewService) { }
 
   ngOnInit() {
@@ -24,7 +24,12 @@ export class MarketplceComponent implements OnInit {
         }
       });
       console.log(this.allProduct);
+      this.index = this.allProduct.length;
+         
+
     })
+
+
   }
 
 }

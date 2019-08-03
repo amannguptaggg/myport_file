@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.setting-box{
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.categorybtn{
+    display: block;
+    padding: 2px 5px;
+    margin: 5px 10px;
+    width: 190px;
+    background-color: green;
+    color: white;
+    align-self: center;
+}

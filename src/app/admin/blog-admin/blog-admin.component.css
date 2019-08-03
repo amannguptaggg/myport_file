@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.admin-blog-heading{
+    margin-top: 15px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.blog-form{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.blog-form-input{
+    display: block;
+    width: 100%;
+    padding: 5px 5px;
+    margin: 10px 10px;
+}
+.blog-area{
+    display: block;
+    width: 100%;
+    height:400px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    overflow-y: scroll;
+}
+.submitBtn{
+    margin: 10px 10px;
+}

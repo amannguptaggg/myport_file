@@ -16,6 +16,7 @@ import {MatFormFieldModule,MatInputModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
 import { ProductViewService } from './product-view.service';
+import { BlogPostsComponent } from './blog-posts/blog-posts.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ProductViewService } from './product-view.service';
     BlogComponent,
     MarketplceComponent,
     ContactComponent,
+    BlogPostsComponent,
 
   ],
   imports: [

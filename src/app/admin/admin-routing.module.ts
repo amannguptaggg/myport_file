@@ -5,6 +5,7 @@ import { AdminComponent } from './admin.component';
 import { MarketplaceAdminComponent } from './marketplace-admin/marketplace-admin.component';
 import { BlogAdminComponent } from './blog-admin/blog-admin.component';
 import { UserContactAdminComponent } from './user-contact-admin/user-contact-admin.component';
+import { PostSettingsComponent } from './post-settings/post-settings.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'user-contact',
         component: UserContactAdminComponent
+      },
+      {
+        path:'post-settings',
+        component: PostSettingsComponent
       }
     ]
   }

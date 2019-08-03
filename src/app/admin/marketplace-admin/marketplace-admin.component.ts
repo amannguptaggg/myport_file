@@ -20,7 +20,7 @@ export class MarketplaceAdminComponent implements OnInit {
   constructor(private _formBuild:FormBuilder,private _fbService:AngularFirestore) {
     this.productForm = this._formBuild.group({
       pro_img:['',[Validators.required]],
-      pro_name:['',[Validators.required]],
+      pro_name:['',[Validators.required,Validators.minLength(25),Validators.maxLength(55)]],
       pro_description:['',[Validators.maxLength(500)]],
       pro_price:['',[Validators.required]],
       pro_URL:['',[Validators.required]]

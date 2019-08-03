@@ -9,15 +9,17 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { AdminComponent } from './admin.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { UserListService } from './user-list.service';
+import { PostSettingsComponent } from './post-settings/post-settings.component';
+import { BlogCategoryService } from './blog-category.service';
 
 
 @NgModule({
-  declarations: [BlogAdminComponent, MarketplaceAdminComponent, UserContactAdminComponent, HomeAdminComponent,AdminComponent],
+  declarations: [BlogAdminComponent, MarketplaceAdminComponent, UserContactAdminComponent, HomeAdminComponent,AdminComponent, PostSettingsComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule
   ],
-  providers:[UserListService]
+  providers:[UserListService,BlogCategoryService]
 })
 export class AdminModule { }

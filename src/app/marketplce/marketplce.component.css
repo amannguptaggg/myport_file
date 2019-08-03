@@ -35,30 +35,37 @@
 
 /* Market place Items List */
 
-.item-container{
-   margin: 5px 0px;
-    background-color: #ede7f6;
-    padding: 10px 5px;
-
-}
-.product-image{
-    padding: 0px;
-    margin: 2px;
-    max-width:300px;
-    max-height: 300px;
+.items-list{
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+   flex-flow: row wrap;
+   align-self: center;
+   align-content: center;
+   background-color: #f5f5f5;
 }
 
-.list-Item{
-display: flex;
-justify-content: center;
-margin-top: 10px;
-}
-.itemTitle{
-    display: flex;
-    justify-content: center
-}
-.itemDesc{
+.item-list{
     display: flex;
     justify-content: center;
-    padding: 7px;
+    max-width: 20rem;
+    min-width: 10rem; 
+    margin: 15px 20px;
+}
+.itemTitle{
+    box-sizing: border-box;
+    display: block;
+    padding: 5px 5px;
+}
+.itemText{
+    box-sizing: border-box;
+    display: block;
+    margin: 2px 10px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.buyBtn{
+    margin-bottom: 0px;
+    position: relative;
+    bottom: 0;
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFirestore,AngularFirestoreCollection} from '@angular/fire/firestore'
+import {AngularFirestore} from '@angular/fire/firestore'
 
 @Injectable({
   providedIn: 'root'
@@ -11,3 +11,4 @@ export class UserListService {
     return this._fb.collection('userContact').snapshotChanges();
   }
 }
+
