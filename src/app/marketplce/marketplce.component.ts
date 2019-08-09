@@ -23,7 +23,6 @@ export class MarketplceComponent implements OnInit {
           pro_price:e.payload.doc.data()['pro_price']
         }
       });
-      console.log(this.allProduct);
       this.index = this.allProduct.length;
          
 

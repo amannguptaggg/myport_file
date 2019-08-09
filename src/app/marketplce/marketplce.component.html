@@ -4,17 +4,20 @@
                 <div class="market-nav">
                         <nav class="market-category">
                             <ul>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="">Cat One</a></li>
                                 <li><a href="">Cat Two</a></li>
                                 <li><a href="">Cat Three</a></li>
                                 <li><a href="">Cat Four</a></li>
+                                <li><a href="/blog">Blog</a></li>
                             </ul>
                         </nav>
                 </div>
         </div>
     </div>
+
     <div class="row">
-       <div class="col-lg-12 items-list">
+       <div class="col-lg-10 items-list">
 
            <div class="card item-list" *ngFor="let item of allProduct">
                <img src="{{item.pro_img}}" class="card-img-top">
@@ -26,6 +29,9 @@
                    </div>
                </div>
            </div>
+       </div>
+
+       <div class="col-lg-2">
 
        </div>
     </div>

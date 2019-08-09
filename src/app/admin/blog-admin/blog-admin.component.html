@@ -8,31 +8,29 @@
 
                             <div class="form-row">
                                     <div class="form-group col-md-4">
-                                      <select id="blogType" class="blog-form-input" formControlName="blogCatgegory">
+                                      <select id="blogType" class="blog-form-input" formControlName="blogCategory" required>
                                         <option selected [ngValue]="null">Choose Category</option>
                                         <option *ngFor="let cat of AllCat">{{cat.category}}</option>
                                       </select>
                                     </div>
 
                                     <div class="form-group col-md-3">
-                                            <input type="text" class="blog-form-input" id="author" placeholder="Author Name" formControlName="blogAuthor">
+                                            <input type="text" class="blog-form-input" id="author" placeholder="Author Name" formControlName="blogAuthor" required>
                                           </div>
                                         </div>
                                   </div>
                       <div class="blog-title">
-                          <input type="text" class="blog-form-input" formControlName="blogTitle" placeholder="Give a title of Blog">
+                          <input type="text" class="blog-form-input" formControlName="blogTitle" placeholder="Give a title of Blog" required>
                       </div>
                       <div class="blog-content">
-                          <textarea name="blog-content-area" class="blog-area" formControlName="blogContent" placeholder="Write Your Content Here">
-
-                          </textarea>
+                          <ckeditor tagName="textarea" class="blog-area" id="blog-area" [editor]="Editor" formControlName="blogContent" placeholder="Write Your Content Here" required></ckeditor>
                       </div>
                       <div class="blog-title">
                           <input type="text" class="blog-form-input" formControlName="blogImageLink" placeholder="Give Blog Image Link" required>
                       </div>
                       
                     <div class="submitBtn">
-                        <button type="submit" class="btn btn-block btn-success">Post Blog</button>
+                        <button type="submit" class="btn btn-block btn-success" [disabled]="!blogPost.valid">Post Blog</button>
                     </div>
                   </form>
               </div>

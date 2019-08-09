@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostTypeService } from './post-type.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -7,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  ngOnInit(){
 
-  ngOnInit() {
-    
+  }
+  constructor(private _postService:PostTypeService,private router:Router){}
+
+ 
+  sendPostType(msg:string){
+    localStorage.setItem('postType',msg);
+    this.router.navigate(['blog/post-filter']);
   }
 
 }

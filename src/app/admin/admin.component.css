@@ -6,7 +6,7 @@
 .admin-sideMenu{
     padding: 10px;
     width: 100%;
-    height: 100%;
+    height: 100vmax;
     background-color: #1976d2;
 }
 
@@ -30,4 +30,7 @@
     margin: 0px 15px;
     color: #fffffb;
     font-family: 'Courier New', Courier, monospace;
+}
+.logOut{
+    cursor: pointer;
 }

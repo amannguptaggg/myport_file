@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Nav Bar  */
+.blogBox{
+    padding: 5px 5px;
+}
+.blog-Nav{
+    position: relative;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #7e57c2;
+}
+.blog-catgeory{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    overflow-x: auto;
+}
+.blog-catgeory ul{
+    box-sizing: border-box;
+     display: flex;
+     justify-content: center;
+}
+.blog-catgeory ul li{
+    float: left;
+    display: block;
+    margin: 5px 20px;
+    white-space: nowrap;
+}
+.blog-catgeory ul li a{
+    color: #fffffb;
+    
+}
+.blog-catgeory ul li a:hover{
+   text-decoration: none;
+   color: #c62828;
+   font-weight: 300;
+}
+
+/* Nav end */
+
+
+
+.blogPost{
+    height: 100%;
+    padding: 15px 30px;
+}
+.post{
+    background-color: #e8eaf6;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.blog-title{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+.blog-type{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #00c853;
+    margin: 10px 5px;
+    display: flex;
+}
+/* Blog Image */
+.blog-img{
+    max-width:100%;
+    height:auto;
+    position: relative;
+    display:block;
+    margin:0 auto;
+}
+.blog-image{
+    max-width:100% !important;
+    height:auto;
+    display:block;
+}
+.catgegory{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    float: left;
+    margin-right:5px;
+}
+.blogDate{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: right;
+    margin-left: 5px;
+}
+.blog-content{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 1.6;
+}
+.blogPost-tile{
+    width: 100%;
+}
+.blogpostLink-list{
+    overflow: auto;
+    background-color: #e0f7fa;
+    margin: 5px 0px;
+}
+.thumbanil-LinkImage{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 7px;
+}
+.blogLink-title{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#109407;
+    font-size: 14px;
+}
+.blogLink-category-type{
+    margin: 5px 3px;
+    display: flex;
+    justify-content: left;
+    color: #494949;
+    font-size: 12px;
+}
+.post-date{
+    margin-right: 10px;
+}
+.post-category{
+    margin-left:20px;
+}
+
+
+@media only screen and (max-width:750px) {
+    .blog-title{
+        font-size: 40px;
+    }
+    .blog-content{
+        font-size: 15px;
+    }
+} 

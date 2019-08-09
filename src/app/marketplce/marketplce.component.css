@@ -9,11 +9,12 @@
     justify-content: center;
     background-color: #7e57c2;
 }
+
 .market-category{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 20px;
     font-weight: 100;
-
+    overflow-x: auto;
 }
 .market-category ul{
      display: flex;
@@ -23,6 +24,7 @@
     float: left;
     display: block;
     margin: 5px 20px;
+    white-space: nowrap;
 }
 .market-category ul li a{
     color: #fffffb;
@@ -38,7 +40,7 @@
 .items-list{
    display: flex;
    justify-content: center;
-   padding: 20px;
+   padding: 7pxpx;
    flex-flow: row wrap;
    align-self: center;
    align-content: center;
@@ -48,14 +50,15 @@
 .item-list{
     display: flex;
     justify-content: center;
-    max-width: 20rem;
-    min-width: 10rem; 
-    margin: 15px 20px;
+    max-width: 18rem;
+    margin: 10px 10px;
 }
 .itemTitle{
-    box-sizing: border-box;
+    padding: 10px;
     display: block;
     padding: 5px 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
 }
 .itemText{
     box-sizing: border-box;
@@ -64,8 +67,26 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
-.buyBtn{
-    margin-bottom: 0px;
-    position: relative;
-    bottom: 0;
+/* .buyBtn{
+
+} */
+
+@media only screen and (max-width: 724px){
+    .item-list{
+        max-width: 15rem;
+        min-width: 12rem;
+    }
+    .card-img-top{
+        display: block;
+        max-width: 300px !important;
+        height: auto;
+    }
+    .itemTitle{
+        padding: 7px;
+        font-size: 20px;
+        font-weight:100;
+    }
+    .itemText{
+        font-size: 17px;
+    }
 }

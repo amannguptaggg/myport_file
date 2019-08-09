@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder,FormGroup,NgForm,Validators} from '@angular/forms'
 import { BlogCategoryService } from '../blog-category.service';
 import {AngularFirestore} from '@angular/fire/firestore';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 @Component({
   selector: 'app-blog-admin',
@@ -12,15 +14,18 @@ export class BlogAdminComponent implements OnInit {
 
   blogPost:FormGroup;
   AllCat:Array<any>;
+  public Editor = ClassicEditor;
 
   constructor(private _formBuild:FormBuilder,private catService:BlogCategoryService,private fbS:AngularFirestore) {
     this.blogPost = this._formBuild.group({
-      blogCatgegory:[null,[Validators.required]],
+      blogCategory:['',[Validators.required]],
       blogTitle:['',[Validators.required]],
-      blogContent: ['',[Validators.required]],
+      blogContent: ['',[Validators.required,Validators.minLength(900)]],
       blogAuthor: ['',[Validators.required]],
       blogImageLink:['',[Validators.required]],
+      published: new Date(),
     });
+
    }
 
   ngOnInit() {
@@ -31,12 +36,12 @@ export class BlogAdminComponent implements OnInit {
         }
       });
     }) 
-  
   }
 
   submitBlog(blogPost:NgForm) {
      console.log(blogPost);
      this.fbS.collection('blogPost').add(blogPost);
+     alert('Blog Saved Successfully !');
      this.resetBlogPost();
   }
 

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AdminAuthService} from '../admin-auth.service';
 
 @Component({
     templateUrl: './admin.component.html',
@@ -6,5 +7,6 @@ import {Component} from '@angular/core';
 })
 
 export class AdminComponent{
+   constructor(private authService:AdminAuthService){}
    
 }

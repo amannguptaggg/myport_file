@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-1">
+
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 blogPost">
+                    <div class="post" *ngIf="post">
+                    <div class="blog-title">
+                        {{post.blogTitle}}
+                    </div>
+                    <div class="blog-type">
+                        <div class="catgegory">Category :{{post.blogCategory}} </div> &bull;
+                        <div class="blogDate">Published : {{post.published.toDate() | date: 'fullDate'}}</div>
+                    </div>
+                    <!-- <div class="blog-img">
+                            <img src="{{post.blogImageLink}}" class="blog-image">
+                        </div> -->
+                    <div class="blog-content">
+                       <div [innerHTML]="post.blogContent"></div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                        <div class="row blogPost-tile" *ngFor="let recentPost of allPosts | async">
+                                <div class="col-12 blogpostLink-list">
+                                        <img src="{{recentPost.blogImageLink}}" class="thumbanil-LinkImage">
+                                        <a [routerLink]="['post',recentPost.id]" routerLinkActive="active" class="blogLink-title"> {{recentPost.blogTitle}} </a> 
+                                         <div class="blogLink-category-type">
+                                              <div class="post-date">
+                                                 Published: {{recentPost.published.toDate() | date: 'fullDate'}}
+                                              </div>
+                                              &bull;
+                                              <div class="post-category">
+                                                 Category: {{recentPost.blogCategory}}
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,58 +1,20 @@
-import { Component,AfterViewInit } from '@angular/core';
+import { Component} from '@angular/core';
 import * as $ from 'jquery';
+
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'portfolio';
   
  constructor() {}
 
  ngOnInit(){
-  
-  $(document).ready(function(){
 
-    // Navigation Animation
-    
-    $(window).scroll(function(){
-
-      var sticky = $('.navbar'),
-      scroll= $(window).scrollTop();
-
-      if(scroll>=680) {
-        sticky.addClass('fixed');
-      }else{
-        sticky.removeClass('fixed');
-      }
-    });
-  //  About animation
-
-    $('a[href="about"]').click(function(e){
-      e.preventDefault();
-      var target = $(this).attr('a[href="about"]');
-     
-      $('html, body').animate({
-        scrollTop: ($(target).offset().top)
-      },3000);
-
-    });
-
-  //  contact Animation
-
-    $('a[href="contact"]').click(function(e){
-      e.preventDefault();
-      var target = $(this).attr('a[href="contact"]');
-     
-      $('html, body').animate({
-        scrollTop: ($(target).offset().top)
-      },3000);
-
-    });
-
+   $(document).ready(function(){
     // Scroll Top Btn
     $(window).scroll(function(){
      var scrollVal = $(window).scrollTop();

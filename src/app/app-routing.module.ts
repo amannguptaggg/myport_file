@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {BlogComponent} from './blog/blog.component';
 import {ContactComponent} from './contact/contact.component';
 import {MarketplceComponent} from './marketplce/marketplce.component';
 import {AboutComponent} from './about/about.component';
-import { BlogPostsComponent } from './blog-posts/blog-posts.component';
+import { BlogPostsComponent } from './blog/blog-posts/blog-posts.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminAuthGuard } from './admin-auth.guard';
 
 const routes: Routes = [
 {
   path: '',
   component:HomeComponent
 },
-
 {
- path: 'blog',
- component:BlogComponent
+  path:'blog',
+  loadChildren:'src/app/blog/blog.module#BlogModule'
 },
 {
   path:'contact',
@@ -30,18 +30,18 @@ const routes: Routes = [
   component: AboutComponent
 },
 {
-  path: 'blog/post',
-  component: BlogPostsComponent
+  path: 'admin',
+  loadChildren:'src/app/admin/admin.module#AdminModule',
+  canActivate:[AdminAuthGuard]
 },
 {
-  path: 'admin',
-  loadChildren:'src/app/admin/admin.module#AdminModule'
-}
-
+  path: 'admin-login',
+  component:AdminLoginComponent,
+},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{enableTracing:false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

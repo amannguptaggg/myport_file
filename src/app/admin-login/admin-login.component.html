@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+        <div class="block">
+          <div class="logInBox">
+            <p class="loginHeading">Admin Login</p>
+            <input type="text" class="formControl" placeholder="Username" #email required>
+            <input type="password" class="formControl" placeholder="Password" #password required>
+            <input type="button" class="btn btn-block logInBtn" value="Login" (click)="authService.signIn(email.value,password.value)">
+            <p class="userRight">*Only Authorised Candidate Can Access Admin Pannel</p>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="row">
+  
+      <div class="authBloc ml-4">
+        <h3>Log In</h3>
+        <div class="formGroup">
+          <input type="text" class="formControl" placeholder="Username" #email required>
+        </div>
+  
+        <div class="formGroup">
+          <input type="password" class="formControl" placeholder="Password" #password required>
+        </div>
+  
+       
+        <div class="formGroup">
+          
+        </div>
+  
+        <div class="formGroup">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+  
+       
+        <div class="formGroup">
+          <button type="button" class="btn btn-success" (click)="authService.GoogleAuth()">
+            <i class="fab fa-google-plus-g"></i>
+            Log in with Google
+          </button>
+        </div>
+
+        <div class="forgotPassword">
+          <span routerLink="/forgot-password">Forgot Password?</span>
+        </div>
+    </div>
+  
+    </div>
+  </div> -->

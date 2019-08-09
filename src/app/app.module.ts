@@ -3,20 +3,24 @@ import { NgModule } from '@angular/core';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {environment} from '../environments/environment';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { BlogComponent } from './blog/blog.component';
 import { MarketplceComponent } from './marketplce/marketplce.component';
-import { ContactComponent } from './contact/contact.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule,MatInputModule} from '@angular/material';
+import { ContactComponent } from './contact/contact.component'
 import {ReactiveFormsModule} from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
 import { ProductViewService } from './product-view.service';
-import { BlogPostsComponent } from './blog-posts/blog-posts.component';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminAuthGuard } from './admin-auth.guard';
+import { AdminAuthService } from './admin-auth.service';
+import {FormsModule} from '@angular/forms';
+import { BlogModule } from './blog/blog.module';
 
 
 @NgModule({
@@ -24,30 +28,25 @@ import { BlogPostsComponent } from './blog-posts/blog-posts.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    BlogComponent,
     MarketplceComponent,
     ContactComponent,
-    BlogPostsComponent,
-
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     ReactiveFormsModule,
-    MatInputModule,
-    AdminModule
-
+    AdminModule,
+    CKEditorModule,
+    FormsModule,
+    BlogModule,
   ],
-  exports: [
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-  ],
-  providers: [ProductViewService],
+  providers: [ProductViewService,AdminAuthGuard,AdminAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
