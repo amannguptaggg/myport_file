@@ -14,14 +14,19 @@ const routes: Routes = [
   {
     path: '',
     component: BlogComponent,
+    pathMatch:'prefix',
     children:[
       {
         path:'',
-        component: BlogHomeComponent
+        component: BlogHomeComponent,
       },
       {
-        path: 'blog/post/:id',
-        component: BlogPostsComponent
+        path: 'post/:id',
+        component: BlogPostsComponent,
+      },
+      {
+        path: 'new-tech/new-tech-post/:id',
+        component:BlogPostsComponent,
       },
       {
         path: 'new-tech',
@@ -35,10 +40,14 @@ const routes: Routes = [
         path: 'business',
         component:PostTypeThreeComponent
       },
-      {
-        path: 'how-to',
+      { 
+        path: 'howto',
         component:PostTypeFourComponent
-      }
+      },
+      {
+        path:'post-filter',
+        component:PostFilterComponent,
+      },
     ]
   }
 ];

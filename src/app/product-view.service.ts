@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import {Post} from './post';
 import 'rxjs-compat/add/operator/map';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,10 +9,14 @@ import { Observable } from 'rxjs';
 export class ProductViewService {
   postDoc:AngularFirestoreDocument<Post>;
   postCollection:AngularFirestoreCollection<Post>;
-
-
+  postRecentCollection:AngularFirestoreCollection<Post>;
+ 
   constructor(private _fb:AngularFirestore) {
     this.postCollection = this._fb.collection('blogPost');
+    this.postRecentCollection = this._fb.collection<Post>('blogPost',ref=>
+    {
+      return ref.orderBy('published','desc').limit(5);
+    })
   }
 
   getProduct() {
@@ -22,6 +25,16 @@ export class ProductViewService {
 
   getAllBlogPost() {
     return this.postCollection.snapshotChanges().map(actions=>{
+      return actions.map(a =>{
+        const data = a.payload.doc.data() as Post;
+        const id = a.payload.doc.id;
+        return { id, ...data} 
+      })
+    })
+  }
+
+  getAllRecentBlogPost() {
+    return this.postRecentCollection.snapshotChanges().map(actions=>{
       return actions.map(a =>{
         const data = a.payload.doc.data() as Post;
         const id = a.payload.doc.id;

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFirestoreModule, AngularFirestore} from '@angular/fire/firestore';
 import {environment} from '../environments/environment';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
@@ -45,7 +45,7 @@ import { BlogModule } from './blog/blog.module';
     FormsModule,
     BlogModule,
   ],
-  providers: [ProductViewService,AdminAuthGuard,AdminAuthService],
+  providers: [ProductViewService,AdminAuthGuard,AdminAuthService,AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

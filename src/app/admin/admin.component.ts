@@ -7,6 +7,6 @@ import {AdminAuthService} from '../admin-auth.service';
 })
 
 export class AdminComponent{
-   constructor(private authService:AdminAuthService){}
+   constructor(public authService:AdminAuthService){}
    
 }

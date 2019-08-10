@@ -1,17 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import {AngularFirestore} from '@angular/fire/firestore';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostTypeService {
-private _postTypeSource = new Subject<string>();
 
-postType$ = this._postTypeSource.asObservable();
+  constructor(public afs:AngularFirestore) { }
 
-  constructor() { }
-
-  sendpostType(postCat:string){
-    this._postTypeSource.next(postCat);
+  
+    // this.afs.collection('blogPost',ref=>ref.where("blogCategory",'==',cat)).snapshotChanges().subscribe(
+    //   val=> {
+    //             val.map(pst=>{
+    //       return {
+    //         id:pst.payload.doc.id,
+    //         blogAuthor:pst.payload.doc.data()['blogAuthor'],
+    //         blogCategory:pst.payload.doc.data()['blogCategory'],
+    //         blogContent:pst.payload.doc.data()['blogContent'],
+    //         blogImageLink:pst.payload.doc.data()['blogImageLink'],
+    //         blogTitle:pst.payload.doc.data()['blogTitle'],
+    //         published:pst.payload.doc.data()['published']
+    //       }
+    //     })
   }
-}

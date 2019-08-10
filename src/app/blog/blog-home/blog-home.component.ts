@@ -12,7 +12,6 @@ import { ProductViewService } from 'src/app/product-view.service';
 export class BlogHomeComponent implements OnInit {
   blogs:Array<any>;
   posts:Observable<Post[]>;
-  recentPost:Observable<Post[]>; 
 
   constructor(private _PostService:ProductViewService) { }
 
@@ -31,7 +30,6 @@ export class BlogHomeComponent implements OnInit {
     // })
 
     
-    this.posts = this._PostService.getAllBlogPost();
-    this.recentPost = this._PostService.getAllBlogPost();    
+    this.posts = this._PostService.getAllBlogPost(); 
   }
 }

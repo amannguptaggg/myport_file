@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import {AngularFirestore,AngularFirestoreDocument} from '@angular/fire/firestore';
+import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Router} from '@angular/router'
 @Injectable({
@@ -23,14 +23,14 @@ export class AdminAuthService {
     
   }
 
-  signIn(email,password){
+  signIn(email:any,password:any){
       return this.afAuth.auth.signInWithEmailAndPassword(email,password)
       .then((result)=>{
         this.ngZone.run(()=>{
           this.router.navigate(['/admin']);
         });
       }).catch((error)=>{
-        window.alert(error.message);
+        alert(error.message);
       })
   }
 
@@ -44,6 +44,7 @@ export class AdminAuthService {
       localStorage.removeItem('user');
       this.router.navigate(['admin-login']);
     });
+    
 
   }
 }

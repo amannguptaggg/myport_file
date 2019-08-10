@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostTypeService } from './post-type.service';
 import { Router } from '@angular/router';
+import { ProductViewService } from '../product-view.service';
+import { Observable } from 'rxjs-compat';
+import { Post } from '../post';
 
 @Component({
   selector: 'app-blog',
@@ -8,16 +10,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
+  recentPost:Observable<Post[]>; 
+  
+  constructor(private router:Router,private _PostService:ProductViewService){}
+  
   ngOnInit(){
-
+    this.recentPost = this._PostService.getAllRecentBlogPost();   
   }
-  constructor(private _postService:PostTypeService,private router:Router){}
 
- 
-  sendPostType(msg:string){
-    localStorage.setItem('postType',msg);
-    this.router.navigate(['blog/post-filter']);
-  }
+
 
 }
