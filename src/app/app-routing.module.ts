@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {ContactComponent} from './contact/contact.component';
-import {MarketplceComponent} from './marketplce/marketplce.component';
 import {AboutComponent} from './about/about.component';
-import { BlogPostsComponent } from './blog/blog-posts/blog-posts.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminAuthGuard } from './admin-auth.guard';
 
@@ -18,12 +16,12 @@ const routes: Routes = [
   loadChildren:'src/app/blog/blog.module#BlogModule'
 },
 {
-  path:'contact',
-  component:ContactComponent
+  path: 'marketplace',
+  loadChildren: 'src/app/marketplace/marketplace.module#MarketplaceModule'
 },
 {
-  path:'marketplace',
-  component: MarketplceComponent
+  path:'contact',
+  component:ContactComponent
 },
 {
   path: 'about',

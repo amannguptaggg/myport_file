@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { MarketplceComponent } from './marketplce/marketplce.component';
 import { ContactComponent } from './contact/contact.component'
 import {ReactiveFormsModule} from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
@@ -21,14 +20,13 @@ import { AdminAuthGuard } from './admin-auth.guard';
 import { AdminAuthService } from './admin-auth.service';
 import {FormsModule} from '@angular/forms';
 import { BlogModule } from './blog/blog.module';
-
+import {MarketplaceModule} from './marketplace/marketplace.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    MarketplceComponent,
     ContactComponent,
     AdminLoginComponent,
   ],
@@ -44,6 +42,7 @@ import { BlogModule } from './blog/blog.module';
     CKEditorModule,
     FormsModule,
     BlogModule,
+    MarketplaceModule
   ],
   providers: [ProductViewService,AdminAuthGuard,AdminAuthService,AngularFirestore],
   bootstrap: [AppComponent]

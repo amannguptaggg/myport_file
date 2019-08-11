@@ -11,14 +11,14 @@
                                         <li><a routerLink="new-tech" routerLinkActive="active">New Tech</a></li>
                                         <li><a routerLink="digital-marketing" routerLinkActive="active">Digital Marketing</a></li>
                                         <li><a routerLink="business" routerLinkActive="active">Business</a></li>
-                                        <li><a routerLink="howto" routerLinkActive="active">How To</a></li>
+                                        <li><a routerLink="how-to" routerLinkActive="active">How To</a></li>
                                         <li><a routerLink="/marketplace" routerLinkActive="active">Marketplace</a></li>
                                     </ul>
                                 </nav>
                         </div>
-                </div>
-            </div> 
-            <div class="row">
+                </div> 
+            </div>  
+            <div class="row bg-blog p-1">
                 <div class="col-lg-2 col-md-1">
                     
                 </div>
@@ -26,9 +26,11 @@
               <router-outlet> </router-outlet>
                 </div>
                 <div class="col-lg-3 col-md-3  col-sm-12 mt-4">
+                  <div class="recent-border">
+                     <p class="recentPost-heading">5 Recently Posted</p>
                         <div class="row blogPost-tile" *ngFor="let recentPost of recentPost | async">
                                 <div class="col-12 blogpostLink-list">
-                                  <img src="{{recentPost.blogImageLink}}" class="thumbanil-LinkImage">
+                                 <div><img src="{{recentPost.blogImageLink}}" class="thumbanil-LinkImage" data-scale="best-fit-down">
                                   <a [routerLink]="['post/',recentPost.id]" routerLinkActive="active" class="blogLink-title">
                                     {{recentPost.blogTitle}} </a>
                                   <div class="blogLink-category-type">
@@ -42,6 +44,7 @@
                                   </div>
                                 </div>
                               </div>
+                            </div>
                   </div>
             </div>
            

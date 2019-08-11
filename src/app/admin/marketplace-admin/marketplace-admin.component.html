@@ -5,6 +5,17 @@
                 <p class="add-product-heading">Add Product</p>
                 <div class="add-product">
                     <form [formGroup]="productForm" class="product-form" (ngSubmit)="productSubmit(productForm.value)">
+                            <div class="blog-type">
+
+                                    <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                              <select id="blogType" class="blog-form-input" formControlName="ItemCategory" required>
+                                                <option selected [ngValue]="null">Choose Category</option>
+                                                <option *ngFor="let cat of ItemCat">{{cat.itemCategory}}</option>
+                                              </select>
+                                            </div>
+                                                </div>
+                                          </div>
                         <input type="text" placeholder="Input Image URL" formControlName="pro_img">
                         <input type="text" placeholder="Input Product Name" formControlName="pro_name">
                         <input type="text" placeholder="Input Description" formControlName="pro_description">

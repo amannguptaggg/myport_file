@@ -39,7 +39,6 @@ export class BlogAdminComponent implements OnInit {
   }
 
   submitBlog(blogPost:NgForm) {
-     console.log(blogPost);
      this.fbS.collection('blogPost').add(blogPost);
      alert('Blog Saved Successfully !');
      this.resetBlogPost();

@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore'
 import { Post } from '../post';
+import { Item } from '../marketplace/item';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogCategoryService {
+
   postCollect:AngularFirestoreCollection<Post>;
+  itemCollect:AngularFirestoreCollection<Item>;
+
   postDoc:AngularFirestoreDocument<Post>;
 
   constructor(private FireblogCat:AngularFirestore) { 
     this.postCollect = this.FireblogCat.collection('blogPost');
+    this.itemCollect = this.FireblogCat.collection('ItemPost');
   }
 
   blogCategories(){
     return this.FireblogCat.collection('postSettings').snapshotChanges();
+  }
+  itemCategories(){
+    return this.FireblogCat.collection('ItemPost').snapshotChanges();
   }
 
   getAllBlogPost() {

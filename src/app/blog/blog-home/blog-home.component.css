@@ -9,15 +9,12 @@
 
 .blogpost-list{
     overflow: auto;
-    background-color:#e8f5e9;
+    background-color:#ffffff;
     margin: 5px 0px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
     }
-    
-.blogpostLink-list{
-        overflow: auto;
-        background-color: #e0f7fa;
-        margin: 5px 0px;
-    }
+     
 .blogPost-tile{
         width: 100%;
     }
@@ -30,24 +27,14 @@
         margin-right: 15px;
     }
     
-.thumbanil-LinkImage{
-        width: 100px;
-        height: 100px;
-        float: left;
-        margin-right: 7px;
-    }
     
     /* Title */
 .blog-title{
         font-family: Arial, Helvetica, sans-serif;
-        color: blue;
-        font-size: 20px;
+        color:#1565c0;
+        font-size: 18px;
 }
-.blogLink-title{
-        font-family: Arial, Helvetica, sans-serif;
-        color:#109407;
-        font-size: 14px;
-}
+
     /* Blog Category */
 .blog-category-type{
       margin: 7px 4px;
@@ -56,22 +43,14 @@
       color: #494949;
       font-size: 15px;
 }
-.blogLink-category-type{
-        margin: 5px 3px;
-        display: flex;
-        justify-content: left;
-        color: #494949;
-        font-size: 12px;
-    }
+
 .post-date{
         margin-right: 10px;
     }
 .post-category{
         margin-left:20px;
     }
-.newTech{
-        cursor: pointer;
-    }
+
     
     /* Blog Links section */
     
@@ -79,7 +58,7 @@
 @media only screen and (max-width:888px) {
         .blog-title{
             font-family: Arial, Helvetica, sans-serif;
-            color: blue;
+            color: #1565c0;
             font-size: 1.3rem;
         }
         .thumbanilImage{

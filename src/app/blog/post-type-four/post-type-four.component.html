@@ -11,7 +11,7 @@
               <div class="row blogPost-tile" *ngFor="let post of postType ">
                 <div class="col-12 blogpost-list">
                   <img src="{{post.blogImageLink}}" class="thumbanilImage">
-                  <a [routerLink]="['new-tech-post',post.id]" routerLinkActive="active"
+                  <a [routerLink]="['how-to-post',post.id]" routerLinkActive="active"
                     class="blog-title"> {{post.blogTitle}} </a>
                   <div class="blog-category-type">
                     <div class="post-date">

@@ -1,0 +1,22 @@
+<div class="container-fluid m-0 p-0">
+  <div class="row">
+    <div class="col-lg-12 items-list">
+
+      <div class="card item-list" *ngFor="let item of itemsCat | async">
+        <img src="{{item.pro_img}}" class="card-img-top" style="max-height:240px;object-fit: contain">
+        <div class="card-body">
+          <div class="card-title itemTitle">{{item.pro_name}}</div>
+          <div class="card-text itemText"><i class="fa fa-inr" aria-hidden="true"></i> {{item.pro_price}} <p
+              class="item-cat"> &bull; {{item.ItemCategory}}</p>
+          </div>
+          <div class="btn-link">
+            <a class="buyBtn btn-buy" href="{{item.pro_URL}}" target="_blank">Buy Now</a>
+            <a class="buyBtn btn-details" href="{{item.pro_URL}}" target="_blank">See Details<p class="btn-tag">on
+                amazon</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      

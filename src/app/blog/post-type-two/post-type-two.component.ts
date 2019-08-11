@@ -4,7 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 @Component({
   selector: 'app-post-type-two',
   templateUrl: './post-type-two.component.html',
-  styleUrls: ['./post-type-two.component.css']
+  styleUrls: ['../blog-home/blog-home.component.css']
 })
 export class PostTypeTwoComponent implements OnInit {
   public postType:any;
@@ -27,5 +27,6 @@ export class PostTypeTwoComponent implements OnInit {
       }
     )
   }
+  
 
 }

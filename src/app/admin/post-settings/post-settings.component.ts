@@ -12,12 +12,17 @@ import { Router } from '@angular/router';
 })
 export class PostSettingsComponent implements OnInit {
   blogSetting:FormGroup;
+  itemSetting:FormGroup;
   posts:Observable<Post[]>; 
 
   constructor(private blogBuilder:FormBuilder, private _fbS:AngularFirestore,
   private BlogService:BlogCategoryService,private router:Router) { 
     this.blogSetting = this.blogBuilder.group({
       blogCategory:['',[Validators.required]]
+    });
+
+    this.itemSetting = this.blogBuilder.group({
+      itemCategory:['',[Validators.required]]
     });
 
 
@@ -27,16 +32,16 @@ export class PostSettingsComponent implements OnInit {
     this.posts = this.BlogService.getAllBlogPost();
 
   }
-
+//  Post Setting
   settingPost(blogSetting:NgForm){
     this._fbS.collection('postSettings').add(blogSetting);
     this.settingPostReset();
-    alert('Category Saved');
+    alert('Post Category Saved');
   }
   settingPostReset(){
     this.blogSetting.reset();
   }
-
+// Blog Update
   delete(id:string){
     var r = confirm("Confirm Delete. \nData will be permanentaly Deleted.");
     if(r == true){
@@ -46,6 +51,18 @@ export class PostSettingsComponent implements OnInit {
 
   updatePost(id:string) {
     this.router.navigate(["post-settings/update",id]);
+  }
+
+
+  // Item Setting
+
+  settingitem(itemSetting:NgForm){
+    this._fbS.collection('ItemPost').add(itemSetting);
+    this.settingItemReset();
+    alert('Item Category Saved');
+  }
+  settingItemReset(){
+    this.itemSetting.reset();
   }
 
 }

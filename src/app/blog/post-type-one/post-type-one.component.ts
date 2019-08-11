@@ -4,9 +4,9 @@ import {AngularFirestore} from '@angular/fire/firestore'
 @Component({
   selector: 'app-post-type-one',
   templateUrl: './post-type-one.component.html',
-  styleUrls: ['./post-type-one.component.css']
+  styleUrls: ['../blog-home/blog-home.component.css']
 })
-export class PostTypeOneComponent implements OnInit {
+export class PostTypeOneComponent implements OnInit { 
    public postType:any;
   constructor(private afs:AngularFirestore) { }
  

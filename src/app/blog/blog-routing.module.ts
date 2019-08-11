@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogComponent } from './blog.component';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
 import { BlogPostsComponent } from './blog-posts/blog-posts.component';
-import { PostFilterComponent } from './post-filter/post-filter.component';
 import { PostTypeOneComponent } from './post-type-one/post-type-one.component';
 import { PostTypeTwoComponent } from './post-type-two/post-type-two.component';
 import { PostTypeThreeComponent } from './post-type-three/post-type-three.component';
@@ -29,6 +28,18 @@ const routes: Routes = [
         component:BlogPostsComponent,
       },
       {
+        path: 'digital-marketing/digital-marketing-post/:id',
+        component:BlogPostsComponent,
+      },
+      {
+        path: 'business/business-post/:id',
+        component:BlogPostsComponent,
+      },
+      {
+        path: 'how-to/how-to-post/:id',
+        component:BlogPostsComponent,
+      },
+      {
         path: 'new-tech',
         component:PostTypeOneComponent
       },
@@ -41,13 +52,9 @@ const routes: Routes = [
         component:PostTypeThreeComponent
       },
       { 
-        path: 'howto',
+        path: 'how-to',
         component:PostTypeFourComponent
-      },
-      {
-        path:'post-filter',
-        component:PostFilterComponent,
-      },
+      }
     ]
   }
 ];

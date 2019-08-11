@@ -10,14 +10,13 @@ import { ProductViewService } from 'src/app/product-view.service';
   styleUrls: ['./blog-home.component.css']
 })
 export class BlogHomeComponent implements OnInit {
-  blogs:Array<any>;
-  posts:Observable<Post[]>;
+  posts:Observable<Post[]>; 
 
   constructor(private _PostService:ProductViewService) { }
 
   ngOnInit() {
-    
-    // this._PostService.getAllBlogPost().subscribe(posts=>{
+    this.posts = this._PostService.getAllBlogPost();
+        // this._PostService.getAllBlogPost().subscribe(posts=>{
     //   this.blogs = posts.map(pst=>{
     //     return {
     //       id:pst.payload.doc.id,
@@ -27,9 +26,7 @@ export class BlogHomeComponent implements OnInit {
     //       title:pst.payload.doc.data()['blogTitle']
     //     }
     //   })
-    // })
-
-    
-    this.posts = this._PostService.getAllBlogPost(); 
+    // }) 
   }
 }
+
