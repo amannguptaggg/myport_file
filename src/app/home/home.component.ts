@@ -3,6 +3,9 @@ import {FormGroup,FormControl,FormBuilder,NgForm,Validators} from '@angular/form
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from 'jquery';
 import Typed from 'typed.js'
+import { Observable } from 'rxjs-compat';
+import { Post } from '../post';
+import { ProductViewService } from '../product-view.service';
 
 @Component({
   selector: 'app-home',
@@ -13,13 +16,15 @@ import Typed from 'typed.js'
 
 export class HomeComponent implements OnInit {
 
+  recentPost:Observable<Post[]>;
+
   userContactForm:FormGroup;
   userName:string="";
   userEmail:string="";
   userPhone:string="";
   userMessage:string="";
 
-  constructor(private _formBuilder:FormBuilder, private firestore:AngularFirestore){
+  constructor(private _formBuilder:FormBuilder, private firestore:AngularFirestore,private _PostService:ProductViewService){
     this.userContactForm = this._formBuilder.group({
       userName:['',[Validators.required]],
       userEmail:['',[Validators.required,Validators.email]],
@@ -30,7 +35,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
 
     let options = {
       strings: [" Aman", "Web Developer", "Designer"],
@@ -58,7 +62,7 @@ export class HomeComponent implements OnInit {
         var wscroll = $(window).scrollTop(); 
         $('.paralaxx').css('background-position','center '+ (wscroll* -0.59 )+'px');
 
-        if(scroll>=680) {
+        if(scroll>=650) {
           sticky.addClass('fixed');
         }else{
           sticky.removeClass('fixed');
@@ -89,10 +93,30 @@ export class HomeComponent implements OnInit {
 
     });
 
+    
 
+var view = $("#tslshow");
+var move = "100px";
+var sliderLimit = -750;
+
+$("#rightArrow").click(function(){
+
+    var currentPosition = parseInt(view.css("left"));
+    if (currentPosition >= sliderLimit) view.stop(false,true).animate({left:"-="+move},{ duration: 400})
+
+});
+
+$("#leftArrow").click(function(){
+
+    var currentPosition = parseInt(view.css("left"));
+    if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 400});
+
+});
 
 
   })
+
+  this.recentPost = this._PostService.getAllRecentBlogPost();  
 }
 
 

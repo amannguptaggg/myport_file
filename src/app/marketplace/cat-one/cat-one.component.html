@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12 items-list">
 
-      <div class="card item-list" *ngFor="let item of itemsCat | async">
+      <div class="card item-list" *ngFor="let item of itemsCat|async">
         <img src="{{item.pro_img}}" class="card-img-top" style="max-height:240px;object-fit: contain">
         <div class="card-body">
           <div class="card-title itemTitle">{{item.pro_name}}</div>

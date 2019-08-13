@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {ContactComponent} from './contact/contact.component';
-import {AboutComponent} from './about/about.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminAuthGuard } from './admin-auth.guard';
 
@@ -20,14 +18,6 @@ const routes: Routes = [
   loadChildren: 'src/app/marketplace/marketplace.module#MarketplaceModule'
 },
 {
-  path:'contact',
-  component:ContactComponent
-},
-{
-  path: 'about',
-  component: AboutComponent
-},
-{
   path: 'admin',
   loadChildren:'src/app/admin/admin.module#AdminModule',
   canActivate:[AdminAuthGuard]
@@ -39,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{enableTracing:true})],
+  imports: [RouterModule.forRoot(routes,{enableTracing:false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

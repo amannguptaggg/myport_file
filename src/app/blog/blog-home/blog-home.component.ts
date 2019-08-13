@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs-compat';
 import { Post } from 'src/app/post';
 import { ProductViewService } from 'src/app/product-view.service';
+import {PaginationService} from '../pagination.service';
 
 
 @Component({
@@ -12,10 +13,10 @@ import { ProductViewService } from 'src/app/product-view.service';
 export class BlogHomeComponent implements OnInit {
   posts:Observable<Post[]>; 
 
-  constructor(private _PostService:ProductViewService) { }
+  constructor(private _PostService:ProductViewService, public page:PaginationService) { }
 
   ngOnInit() {
-    this.posts = this._PostService.getAllBlogPost();
+    // this.posts = this._PostService.getAllBlogPost();
         // this._PostService.getAllBlogPost().subscribe(posts=>{
     //   this.blogs = posts.map(pst=>{
     //     return {
@@ -27,6 +28,13 @@ export class BlogHomeComponent implements OnInit {
     //     }
     //   })
     // }) 
+    this.page.init('blogPost','published',{reverse:true,prepend:false})
   }
+  scrollHandler(e){
+    if(e === 'bottom'){
+      this.page.more()
+    }
+  }
+
 }
 

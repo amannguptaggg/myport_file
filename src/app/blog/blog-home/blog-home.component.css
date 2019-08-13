@@ -5,8 +5,36 @@
 .blogBox{
     padding: 5px 5px;
 }
-
-
+.blog-bdy{
+    max-height: 700px;
+    overflow-y: hidden;
+    box-shadow: inset 0px -2px 5px 0px rgba(0, 0, 0, 0.83);
+}
+.content{
+    max-height: 700px;
+    overflow-y: auto;
+}
+.content::-webkit-scrollbar{
+    width: 8px;
+}
+.content::-webkit-scrollbar-thumb{
+    background-color:#795548;
+    width: 5px;
+    border-radius: 10px;
+}
+.content::-webkit-scrollbar-track{
+    background-color:#bdbdbd;
+}
+.data-end{
+    display: flex;
+    justify-content: center;
+    padding: 5px 10;
+    width: 100%;
+    background-color: #bdbdbd;
+    color: black;
+    margin: 10px 0px;
+}
+ 
 .blogpost-list{
     overflow: auto;
     background-color:#ffffff;

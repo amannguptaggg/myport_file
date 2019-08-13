@@ -8,10 +8,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component'
 import {ReactiveFormsModule} from '@angular/forms';
-import { AdminModule } from './admin/admin.module';
 import { ProductViewService } from './product-view.service';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireAuthModule} from '@angular/fire/auth';
@@ -19,15 +16,11 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminAuthGuard } from './admin-auth.guard';
 import { AdminAuthService } from './admin-auth.service';
 import {FormsModule} from '@angular/forms';
-import { BlogModule } from './blog/blog.module';
-import {MarketplaceModule} from './marketplace/marketplace.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent,
-    ContactComponent,
     AdminLoginComponent,
   ],
   imports: [
@@ -38,11 +31,8 @@ import {MarketplaceModule} from './marketplace/marketplace.module';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    AdminModule,
     CKEditorModule,
     FormsModule,
-    BlogModule,
-    MarketplaceModule
   ],
   providers: [ProductViewService,AdminAuthGuard,AdminAuthService,AngularFirestore],
   bootstrap: [AppComponent]

@@ -20,4 +20,4 @@ import { CatFourComponent } from './cat-four/cat-four.component';
   providers:[ProductViewService]
 })
 
-export class MarketplaceModule { } 
+export class MarketplaceModule { constructor(){console.log('market module is loaded')}} 
