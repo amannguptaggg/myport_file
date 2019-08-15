@@ -16,12 +16,15 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminAuthGuard } from './admin-auth.guard';
 import { AdminAuthService } from './admin-auth.service';
 import {FormsModule} from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AdminLoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import {FormsModule} from '@angular/forms';
     ReactiveFormsModule,
     CKEditorModule,
     FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [ProductViewService,AdminAuthGuard,AdminAuthService,AngularFirestore],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@ export class PostSettingsComponent implements OnInit {
   posts:Observable<Post[]>; 
 
   constructor(private blogBuilder:FormBuilder, private _fbS:AngularFirestore,
-  private BlogService:BlogCategoryService,private router:Router) { 
+  private BlogService:BlogCategoryService,public router:Router) { 
     this.blogSetting = this.blogBuilder.group({
       blogCategory:['',[Validators.required]]
     });
@@ -49,8 +49,8 @@ export class PostSettingsComponent implements OnInit {
   }
 }
 
-  updatePost(id:string) {
-    this.router.navigate(["post-settings/update",id]);
+  updatePost() {
+    this.router.navigate(['postUp']);
   }
 
 

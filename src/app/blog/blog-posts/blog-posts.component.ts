@@ -3,7 +3,7 @@ import { ProductViewService } from '../../product-view.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ActivatedRoute,Route } from '@angular/router';
 import { Post } from '../../post';
-import {Observable} from 'rxjs-compat'
+import {Observable} from 'rxjs-compat';
 
 
 @Component({
@@ -21,10 +21,10 @@ export class BlogPostsComponent implements OnInit {
   ngOnInit() {
      this.router.params.subscribe(params=>{
        const pId = params['id']
-       console.log(pId);
        this.getPost(pId);
      })
     this.allPosts = this._getPostService.getAllBlogPost();
+
   }
   
   

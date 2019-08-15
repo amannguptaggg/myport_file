@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     let options = {
-      strings: [" Aman", "Web Developer", "Designer"],
+      strings: [" Aman", "Developer", "Designer"],
       typeSpeed:130,
       backSpeed:100,
       backDelay: 1200,
@@ -59,8 +59,8 @@ export class HomeComponent implements OnInit {
         var sticky = $('.navbar'),
 
         scroll= $(window).scrollTop();
-        var wscroll = $(window).scrollTop(); 
-        $('.paralaxx').css('background-position','center '+ (wscroll* -0.59 )+'px');
+        // var wscroll = $(window).scrollTop(); 
+        // $('.paralaxx').css('background-position','center '+ (wscroll* -0.59 )+'px');
 
         if(scroll>=650) {
           sticky.addClass('fixed');
@@ -91,25 +91,23 @@ export class HomeComponent implements OnInit {
         scrollTop: ($(target).offset().top)
       },3000);
 
-    });
-
-    
+    });  
 
 var view = $("#tslshow");
-var move = "100px";
-var sliderLimit = -750;
+var move = "120px";
+var sliderLimit = -75000;
 
 $("#rightArrow").click(function(){
 
     var currentPosition = parseInt(view.css("left"));
-    if (currentPosition >= sliderLimit) view.stop(false,true).animate({left:"-="+move},{ duration: 400})
+    if (currentPosition >= sliderLimit) view.stop(false,true).animate({left:"-="+move},{ duration: 300})
 
 });
 
 $("#leftArrow").click(function(){
 
     var currentPosition = parseInt(view.css("left"));
-    if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 400});
+    if (currentPosition < 0) view.stop(false,true).animate({left:"+="+move},{ duration: 300});
 
 });
 

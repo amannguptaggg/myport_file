@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminAuthGuard } from './admin-auth.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
 {
@@ -26,10 +27,14 @@ const routes: Routes = [
   path: 'admin-login',
   component:AdminLoginComponent,
 },
+{
+  path: '**',
+  component: PageNotFoundComponent,
+}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{enableTracing:false})],
+  imports: [RouterModule.forRoot(routes,{enableTracing:true,scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

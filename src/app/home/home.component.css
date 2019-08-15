@@ -2,35 +2,35 @@
     margin: 0px;
     padding: 0px;
 }
-
 .headerDiv{
     position: relative;
     background-image: linear-gradient(rgba(10,10,10,.6), rgba(10,10,10,.6)),url('../../assets/images/bgImage2.jpg');
-    min-height: 100vh;
+    height: 100vh;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
+    object-fit: fill;
 } 
 .textBox{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color:#fafafafa;
+    color:#ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow';
 }
 .headText{
  display: flex;
  justify-content: center;
- font-size: 2.2rem;
+ font-size:50px;
  font-weight: lighter;
  white-space: nowrap;
 }
 .headTextName{
 display: flex;
 justify-content: center;
-font-size: 4.1rem;
+font-size: 70px;
 font-weight: 200;
 white-space: nowrap;
 overflow: hidden;
@@ -48,6 +48,7 @@ overflow: hidden;
 .navbar-collapse ul{
     margin: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
 }
 .navbar-collapse ul li{
     padding: 12px 5px 12px 5px;
@@ -58,19 +59,20 @@ overflow: hidden;
 }
 .navbar-toggler{
     margin-right:10px;
+    font-size: 27px;
 }
 
 .fixed{
     position:fixed;
     top: 0px;
     left:0px;
-    background-color: #bbdefb;
+    background-color: #ffffff;
     z-index: 10;
 }
 
 .ProfileLinkBox{
     position: absolute;;
-    bottom: 90px;
+    bottom: 20%;
     left: 50%;
     transform: translate(-50%,0);
     padding:5px;
@@ -94,7 +96,6 @@ overflow: hidden;
     color: #0100ca;
     background-color: #fafafafa;
     box-shadow: 0px 0px 13px 5px rgba(212, 212, 212, 0.94);
-
 }
 
 .ProfileLinkBox a{
@@ -102,6 +103,26 @@ overflow: hidden;
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width:450px){
+    .headText{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .headTextName{
+        font-size: 40px;
+        font-weight: 700;
+    }
+    .navbar-brand{
+        padding: 0px 5px 0px 7px;
+    }
+    .ProfileLinkBox{
+        bottom: 25%;
+    }
+
+}
+
+/* Navigation Start */
 
 
 
@@ -125,7 +146,7 @@ nav{
 
 .scrolldown{
     position: absolute;
-    bottom: 20px;
+    bottom:10%;
     left: 50%;
     width: 35px;
     height: 35px;
@@ -207,17 +228,7 @@ nav{
 .aboutHeading{
     display:flex;
     justify-content: center;
-    font-size: 2rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 300;
-    text-decoration: underline;
-    text-decoration-color: darkgray;
-    white-space: nowrap;
-}
-.aboutHeadingSmall{
-    display: none;
-    justify-content: center;
-    font-size: 2rem;
+    font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 300;
     text-decoration: underline;
@@ -239,6 +250,10 @@ nav{
  padding: 10px 20px;
  border-radius: 5px;
 }
+.aboutMeBtns a{
+    border-radius: 5px;
+    border: 1px solid black;
+}
 .contactBtn:hover{
     box-shadow: 4px 4px 15px 1px #000000;
 }
@@ -256,10 +271,47 @@ nav{
 }
 
 
+
+@media only screen and (max-width:450px){
+    .aboutBox{
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 1px solid #cfd8dc;
+    }
+    .imageBlock{
+        max-width:100%;
+        height:auto;
+        position: relative;
+        display:block;
+        margin: 0px;
+    }
+    .my-img{
+        max-width:100% !important;
+        height:300px;
+        float: left;
+        content: none;
+        object-fit: scale-down;
+        margin: 0px;
+    }
+    .aboutMeBox{
+        margin-right: 5px 5px;
+    }
+    .aboutText{
+        padding:10px 3px;
+        display: flex;
+        justify-content: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
 /* My Skill Section */
 
 .skillBox{
   margin:100px 0px 150px 0px;
+  display: block;
 }
 
 .skillHeading{
@@ -278,6 +330,7 @@ nav{
     font-weight: 100;
     padding: 0px 15px;
 }
+
 /* Services   */
 .serviceFlex{
     background-image: linear-gradient(rgba(10,10,10,.3), rgba(10,10,10,.3)),url('../../assets/images/servicesImg.jpg');
@@ -286,17 +339,15 @@ nav{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: auto;
+    padding: 30px 0px;
     position: relative;
 }
 .service-cards{
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     position: absolute;
-    padding: auto 90px;
-    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
     text-align: center;
+    margin: 0px;
 }
 .serviceLogo{
     padding: 10px;
@@ -321,44 +372,23 @@ nav{
     padding: 10px 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* My Work Section */
 
-.myWorkBox{
-    padding: 50px 20px;
-}
-.workHeading{
-    display:flex;
-    justify-content: center;
-    font-size: 3rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-weight: 200;
-    text-decoration: underline;
-    text-decoration-color: darkgray;
-}
-.work-nav{
-    margin: 40px 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight:100px;
-    font-display: block;
-    background-color: #7e57c2;
-}
-.work-nav ul{
-    padding: 9px 10px;
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-}
-.work-nav ul li{
-    list-style-type: none;
-    float: left;
-    margin: 5px 30px;
-    white-space: nowrap;
-}
-.work-nav ul li a{
-    color: #fffffb;
-    text-decoration: none;
-}
 
+@media only screen and (max-width:720px){
+    .skillBox{
+        margin:10px 0px 10px 0px;
+        padding: 50px 5px 70px 5px;
+    }
+    .service-cards{
+        position: relative;
+        top:5%;
+        left: 0%;
+        transform: translate(0,0);
+        padding: auto 20px;
+        margin: auto;
+        text-align: center;
+    }
+}
 
 /* Blog Post Section */
 
@@ -375,12 +405,11 @@ nav{
    font-family: 'Times New Roman', Times, serif;
    text-decoration: underline;
    white-space: nowrap;
+   position: relative;
 }
 .bstimeslider {
   width: 100%;
-  position: relative;
-  display: flex;
-  align-content: space-around;
+  position: absolute;
   padding: 10px 10px;
 }
 
@@ -389,7 +418,6 @@ nav{
   justify-content: center;
   height: 100%;
   width: 5000px;
-  line-height: 2;
   padding: 10px 0px;
 }
 
@@ -439,7 +467,6 @@ nav{
     background-color: #fafafa;
     object-fit: contain;
     box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.74);
-    z-index:1;
 }
 .card-ttl{
     padding: 10px 10px;
@@ -451,10 +478,16 @@ nav{
     color: #212121;
 
 }
+
+@media only screen and (max-width:700px){
+    .blogSection{
+        display: none;
+    }
+}
 /* Contact Section */
 .contact-section{
     background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),url('../../assets/images/contactImg.jpg');
-    min-height: auto;
+    min-height: 100vh;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -590,4 +623,26 @@ nav{
     .headTextName{
         white-space: nowrap;
     }
+ }
+
+ @media only screen and (max-width:485px){
+    .contact-details{
+        margin-top: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 0px;
+        color: #fffffb;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .formbox{
+        padding: 10px 15px;
+        margin-left:15px;
+    }
+    .example-container > *{
+        width: 100%;
+      }
+      .submitButton{
+          width: 100%;
+          margin-right: 10px;
+      }
  }

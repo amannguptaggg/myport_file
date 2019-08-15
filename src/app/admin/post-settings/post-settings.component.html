@@ -38,7 +38,8 @@
                                                 <th scope="row">{{post.id}}</th>
                                                 <td>{{post.blogTitle}}</td>
                                                 <td><button class="btn btn-danger btn-block" (click)="delete(post.id)">Delete</button></td>
-                                                <td><button class="btn btn-primary btn-block" (click)="updatePost(post.id)">Update</button></td>
+                                                <!-- <td><button class="btn btn-primary btn-block" (click)="updatePost()">Update</button></td> -->
+                                                <td><a [routerLink]='["postUp",post.id]' routerLinkActive="active">Update</a></td>
                                               </tr>
                                             </tbody>
                                     </table>

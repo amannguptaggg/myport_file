@@ -1,19 +1,38 @@
+<nav class="navbar navbar-expand-lg fixed-top market-nav justify-content-between">
+  <a class="navbar-brand ml-3" href="index.html"><img src="../../assets/icons/favicon-32x32.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fa fa-bars" aria-hidden="true" style="color:#ffffffff;font: size 35px;"></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse market-category" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="index.html">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a href="/marketplace">Marketplace</a>
+      </li> 
+      <li class="nav-item">
+        <a routerLink="Fashion" routerLinkActive="active" (click)="ToggleNavBar()">Fashion</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="Electronics" routerLinkActive="active" (click)="ToggleNavBar()">Electronics</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="Health-Care" routerLinkActive="active" (click)="ToggleNavBar()">Health & Care</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="Special-offers" routerLinkActive="active" (click)="ToggleNavBar()">Special offers</a>
+      </li>
+      <li class="nav-item">
+          <a href="/blog">Blog</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container-fluid m-0 p-0">
         <div class="row">
             <div class="col-lg-12">
-                    <div class="market-nav">
-                            <nav class="market-category">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="/marketplace">Marketplace</a></li>
-                                    <li><a routerLink="Fashion" routerLinkActive="active">Fashion</a></li>
-                                    <li><a routerLink="Electronics" routerLinkActive="active">Electronics</a></li>
-                                    <li><a routerLink="Health-Care" routerLinkActive="active">Health & Care</a></li>
-                                    <li><a routerLink="Special-offers" routerLinkActive="active">Special offers</a></li>
-                                    <li><a href="/blog">Blog</a></li>
-                                </ul>
-                            </nav>
-                    </div>
             </div> 
         </div> 
         <div class="row pro-list-bg">

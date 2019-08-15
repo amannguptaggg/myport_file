@@ -47,10 +47,10 @@
                       Category: {{post.blogCategory}}
                     </div>
                   </div>
-                </div>
-              </div>
+                </div> 
+              </div> 
             </div>
-            <p *ngIf="page.done | async" class="data-end">No More Data | *if no data displayed please refresh page</p>
+            <p *ngIf="page.done | async" class="data-end">No More Data</p>
             <app-loading-spinner *ngIf="page.loading | async"></app-loading-spinner>
           </div>
 

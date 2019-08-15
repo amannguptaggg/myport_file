@@ -1,31 +1,46 @@
+<nav class="navbar navbar-expand-lg fixed-top blog-Nav justify-content-between">
+  <a class="navbar-brand ml-3" href="index.html"><img src="../../assets/icons/favicon-32x32.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fa fa-bars" aria-hidden="true" style="color:#ffffffff;font: size 35px;"></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse blog-catgeory" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a href="index.html">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a href="/blog">Blog</a> 
+      </li> 
+      <li class="nav-item">
+        <a routerLink="new-tech" routerLinkActive="active" (click)="ToggleNavBar()">New Tech</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="digital-marketing" routerLinkActive="active" (click)="ToggleNavBar()">Digital Marketing</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="business" routerLinkActive="active" (click)="ToggleNavBar()">Business</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="how-to" routerLinkActive="active" (click)="ToggleNavBar()">How To</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/marketplace" routerLinkActive="active" (click)="ToggleNavBar()">Marketplace</a> 
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container-fluid m-0 p-0">
     <div class="row">
         <div class="col-12">
-            <div class="row">
-                <div class="col-12">
-                        <div class="blog-Nav">
-                                <nav class="blog-catgeory">
-                                    <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="/blog">Blog</a></li>
-                                        <li><a routerLink="new-tech" routerLinkActive="active">New Tech</a></li>
-                                        <li><a routerLink="digital-marketing" routerLinkActive="active">Digital Marketing</a></li>
-                                        <li><a routerLink="business" routerLinkActive="active">Business</a></li>
-                                        <li><a routerLink="how-to" routerLinkActive="active">How To</a></li>
-                                        <li><a routerLink="/marketplace" routerLinkActive="active">Marketplace</a></li>
-                                    </ul>
-                                </nav>
-                        </div>
-                </div>  
-            </div>  
             <div class="row bg-blog p-1">
-                <div class="col-lg-2 col-md-1">
+                <div class="col-lg-2">
                     
                 </div>
-                <div class="col-lg-7 col-md-8 col-sm-12">
+                <div class="col-lg-7 col-md-9 col-sm-12">
               <router-outlet> </router-outlet>
                 </div>
-                <div class="col-lg-3 col-md-3  col-sm-12 mt-4 pl-1">
+                <div class="col-lg-3 col-md-3  col-sm-12 mt-2 pl-1">
                   <div class="recent-border">
                      <p class="recentPost-heading">5 Recently Posted</p>
                         <div class="row blogPost-tile" *ngFor="let recentPost of recentPost | async">
@@ -44,7 +59,7 @@
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                          </div>
                   </div>
             </div>
            

@@ -5,7 +5,7 @@ import { MarketplaceAdminComponent } from './marketplace-admin/marketplace-admin
 import { BlogAdminComponent } from './blog-admin/blog-admin.component';
 import { UserContactAdminComponent } from './user-contact-admin/user-contact-admin.component';
 import { PostSettingsComponent } from './post-settings/post-settings.component';
-import { UpdateComponent } from './post-settings/update/update.component';
+import { UpdateComponent } from './update/update.component';
 import { AdminComponent } from './admin.component';
 import { AdminAuthGuard } from '../admin-auth.guard';
 
@@ -14,10 +14,16 @@ const routes: Routes = [
   {
     path: '',
     component:AdminComponent,
+    pathMatch:'prefix',
     children:[
       {
         path:'',
         component:HomeAdminComponent,
+        canActivate:[AdminAuthGuard]
+      },
+      {
+        path: 'post-settings/postUp/:id',
+        component: UpdateComponent,
         canActivate:[AdminAuthGuard]
       },
       {
@@ -39,12 +45,7 @@ const routes: Routes = [
         path:'post-settings',
         component: PostSettingsComponent,
         canActivate:[AdminAuthGuard]
-      },
-      {
-        path: 'post-settings/update/:id',
-        component: UpdateComponent,
-        canActivate:[AdminAuthGuard]
-      },
+      }
     ]
   }
 ];

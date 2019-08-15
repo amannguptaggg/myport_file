@@ -48,3 +48,32 @@
     font-weight: 100;
     line-height: 1.8;
 }
+
+@media only screen and (max-width:515px){
+    .blogPost{
+    padding-top: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 7px;
+    }
+    .blog-title{
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .blog-type{
+        font-size: 15px;
+    }
+    .blog-content{
+     font-size: 18px;
+    }
+    .catgegory{
+        margin-right:5px;
+    }
+    .blogDate{
+        margin-left: 5px;
+
+    }
+}

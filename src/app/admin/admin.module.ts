@@ -12,7 +12,7 @@ import { UserListService } from './user-list.service';
 import { PostSettingsComponent } from './post-settings/post-settings.component';
 import { BlogCategoryService } from './blog-category.service';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
-import { UpdateComponent } from './post-settings/update/update.component';
+import { UpdateComponent } from './update/update.component';
 
 import {AngularFirestoreModule} from '@angular/fire/firestore'
 import {AngularFireAuthModule} from '@angular/fire/auth'; 

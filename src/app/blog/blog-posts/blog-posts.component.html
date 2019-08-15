@@ -9,14 +9,15 @@
                     </div>
                     <div class="blog-type">
                         <div class="catgegory">Category :{{post.blogCategory}} </div> &bull;
-                        <div class="blogDate">Published : {{post.published.toDate() | date: 'fullDate'}}</div>
+                        <!-- <div class="blogDate">Published : {{post.published |date}}</div> -->
                     </div>
                     <div class="blog-content">
                        <div [innerHTML]="post.blogContent"></div>
                     </div>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </div>
+ 

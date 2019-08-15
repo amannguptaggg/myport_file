@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProductViewService } from '../product-view.service';
 import { Observable } from 'rxjs-compat';
 import { Post } from '../post';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-blog',
@@ -17,6 +18,13 @@ export class BlogComponent implements OnInit {
   ngOnInit(){
     this.recentPost = this._PostService.getAllRecentBlogPost();   
   }
+
+  ToggleNavBar () {
+    let element: HTMLElement = document.getElementsByClassName( 'navbar-toggler' )[ 0 ] as HTMLElement;
+    if ( element.getAttribute( 'aria-expanded' ) == 'true' ) {
+        element.click();
+    }
+}
 
 
 }

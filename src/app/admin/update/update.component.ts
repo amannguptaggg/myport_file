@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
-import { BlogCategoryService } from '../../blog-category.service';
-import { Post } from '../../../post';
 import { FormGroup,FormBuilder,Validators,NgForm } from '@angular/forms';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {AngularFirestore} from '@angular/fire/firestore'
+import { Post } from 'src/app/post';
+import { BlogCategoryService } from '../blog-category.service';
 
 @Component({
   selector: 'app-update',
@@ -56,7 +56,6 @@ export class UpdateComponent implements OnInit {
 
     this.BlogService.updatePost(id,blogUpdatePost);
     alert('Post Updated Successfully');
-    this.router.navigate(['/post-settings']);
   }
 
 }
