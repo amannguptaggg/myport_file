@@ -16,6 +16,7 @@ export class BlogPostsComponent implements OnInit {
   allPosts:Observable<Post[]>
   post:Post;
   id:any;
+  seconds:number;
   constructor(private _getPostService:ProductViewService,private router:ActivatedRoute) { }
 
   ngOnInit() {

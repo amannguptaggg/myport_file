@@ -59,9 +59,6 @@ export class HomeComponent implements OnInit {
         var sticky = $('.navbar'),
 
         scroll= $(window).scrollTop();
-        // var wscroll = $(window).scrollTop(); 
-        // $('.paralaxx').css('background-position','center '+ (wscroll* -0.59 )+'px');
-
         if(scroll>=650) {
           sticky.addClass('fixed');
         }else{
@@ -75,8 +72,8 @@ export class HomeComponent implements OnInit {
       e.preventDefault();
       var target = $(this).attr('a[href="about"]');
      
-      $('html, body').animate({
-        scrollTop: ($(target).offset().top)
+      $('html,body').animate({
+        scrollTop:($(target).offset().top)
       },3000);
 
     });
@@ -87,15 +84,15 @@ export class HomeComponent implements OnInit {
       e.preventDefault();
       var target = $(this).attr('a[href="contact"]');
      
-      $('html, body').animate({
-        scrollTop: ($(target).offset().top)
+      $('html,body').animate({
+        scrollTop:($(target).offset().top)
       },3000);
 
     });  
 
 var view = $("#tslshow");
 var move = "120px";
-var sliderLimit = -75000;
+var sliderLimit = -800;
 
 $("#rightArrow").click(function(){
 
@@ -121,12 +118,10 @@ $("#leftArrow").click(function(){
 postData(userContactForm:NgForm) {
   let data = userContactForm;
   this.firestore.collection('userContact').add(data);
-  alert('THANK YOU'+'\n'+'Your response is saved !');
+  alert('THANK YOU'+'\n'+'Your response is Sent!');
   this.resetFormData();
   
   }
-
-
 resetFormData() {
   this.userContactForm.reset();
 }

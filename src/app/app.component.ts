@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import * as $ from 'jquery';
+import {SwUpdate} from '@angular/service-worker';
 
 
 
@@ -10,9 +11,14 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
   
- constructor() {}
+ constructor(public swUpdate:SwUpdate) {}
 
  ngOnInit(){
+
+  this.swUpdate.available.subscribe(event=>{
+    console.log('A New Version Is Avilable');
+  });
+  this.swUpdate.checkForUpdate();
 
    $(document).ready(function(){
     // Scroll Top Btn
@@ -26,6 +32,7 @@ export class AppComponent {
         }
     });
 
+    
     $('#myBtn').click(function(e){
       e.preventDefault();
        $('html,body').animate({scrollTop:0},'700');
