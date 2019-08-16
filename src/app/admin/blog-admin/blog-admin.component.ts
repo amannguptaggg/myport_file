@@ -29,6 +29,7 @@ export class BlogAdminComponent implements OnInit {
    }
 
   ngOnInit() {
+     
     this.catService.blogCategories().subscribe(cat=>{
       this.AllCat = cat.map(c=>{
         return {

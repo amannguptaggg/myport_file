@@ -16,7 +16,21 @@ export class BlogComponent implements OnInit {
   constructor(private router:Router,private _PostService:ProductViewService){}
   
   ngOnInit(){
-    this.recentPost = this._PostService.getAllRecentBlogPost();   
+    this.recentPost = this._PostService.getAllRecentBlogPost();
+   
+
+    $(document).ready(function () {
+      $(document).click(
+          function (event) {
+              var target = $(event.target);
+              var _mobileMenuOpen = $(".navbar-collapse").hasClass("show");
+              if (_mobileMenuOpen === true && !target.hasClass("navbar-toggler")) {
+                  $("button.navbar-toggler").click();
+              }
+          }
+      );
+  })
+  
   }
 
   ToggleNavBar () {

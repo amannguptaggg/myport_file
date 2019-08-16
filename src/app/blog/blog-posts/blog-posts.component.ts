@@ -3,7 +3,7 @@ import { ProductViewService } from '../../product-view.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ActivatedRoute,Route } from '@angular/router';
 import { Post } from '../../post';
-import {Observable} from 'rxjs-compat';
+import {Observable, Timestamp} from 'rxjs-compat';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class BlogPostsComponent implements OnInit {
   allPosts:Observable<Post[]>
   post:Post;
   id:any;
-  seconds:number;
+  publishedD:any;
   constructor(private _getPostService:ProductViewService,private router:ActivatedRoute) { }
 
   ngOnInit() {
@@ -25,7 +25,6 @@ export class BlogPostsComponent implements OnInit {
        this.getPost(pId);
      })
     this.allPosts = this._getPostService.getAllBlogPost();
-
   }
   
   
@@ -33,9 +32,10 @@ export class BlogPostsComponent implements OnInit {
   getPost(pId:string){
     this.router.paramMap.subscribe((parms)=>{
         this.id= parms.get('id');
+        window.scroll(0,0);
    });
 
-     return this._getPostService.getPostData(this.id).subscribe(data=> this.post=data)
+     return this._getPostService.getPostData(this.id).subscribe(data=> this.post=data);
      
   }
 

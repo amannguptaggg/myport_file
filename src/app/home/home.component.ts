@@ -68,20 +68,20 @@ export class HomeComponent implements OnInit {
 
        //  About animation
 
-    $('a[href="about"]').click(function(e){
-      e.preventDefault();
-      var target = $(this).attr('a[href="about"]');
-     
-      $('html,body').animate({
-        scrollTop:($(target).offset().top)
-      },3000);
-
-    });
-
+       $('a[href="about"]').click(function(e){	
+        e.preventDefault();	
+        var target = $(this).attr('a[href="about"]');	
+  
+         $('html, body').animate({	
+          scrollTop: ($(target).offset().top)	
+        },3000);	
+  
+       });
   //  contact Animation
 
     $('a[href="contact"]').click(function(e){
       e.preventDefault();
+
       var target = $(this).attr('a[href="contact"]');
      
       $('html,body').animate({
@@ -89,6 +89,19 @@ export class HomeComponent implements OnInit {
       },3000);
 
     });  
+
+    $(document).ready(function () {
+      $(document).click(
+          function (event) {
+              var target = $(event.target);
+              var _mobileMenuOpen = $(".navbar-collapse").hasClass("show");
+              if (_mobileMenuOpen === true && !target.hasClass("navbar-toggler")) {
+                  $("button.navbar-toggler").click();
+              }
+          }
+      );
+  })
+  
 
 var view = $("#tslshow");
 var move = "120px";
@@ -110,6 +123,8 @@ $("#leftArrow").click(function(){
 
 
   })
+
+
 
   this.recentPost = this._PostService.getAllRecentBlogPost();  
 }

@@ -159,6 +159,7 @@
    .img-top{
        max-height: 240px;
        object-fit: contain;
+       margin: auto;
    }
 
  }
