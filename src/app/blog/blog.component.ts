@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ProductViewService } from '../product-view.service';
 import { Observable } from 'rxjs-compat';
 import { Post } from '../post';
 import * as $ from 'jquery';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-blog',
@@ -13,9 +13,16 @@ import * as $ from 'jquery';
 export class BlogComponent implements OnInit {
   recentPost:Observable<Post[]>; 
   
-  constructor(private router:Router,private _PostService:ProductViewService){}
+  constructor(private _PostService:ProductViewService , private seo:SeoService){}
   
   ngOnInit(){
+
+    this.seo.generateTags({
+      title: 'AmannG.com/blog',
+      description: 'Articles you will get related to Digital Marketing , Business , New Tech , how to ',
+      image: 'https://my-portfolio-4ff3c.web.app/assets/icons/favicon.ico',
+    })
+
     this.recentPost = this._PostService.getAllRecentBlogPost();
    
 
@@ -32,13 +39,6 @@ export class BlogComponent implements OnInit {
   })
   
   }
-
-  ToggleNavBar () {
-    let element: HTMLElement = document.getElementsByClassName( 'navbar-toggler' )[ 0 ] as HTMLElement;
-    if ( element.getAttribute( 'aria-expanded' ) == 'true' ) {
-        element.click();
-    }
-}
 
 
 }

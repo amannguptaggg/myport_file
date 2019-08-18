@@ -6,6 +6,7 @@ import Typed from 'typed.js'
 import { Observable } from 'rxjs-compat';
 import { Post } from '../post';
 import { ProductViewService } from '../product-view.service';
+import { SeoService } from '../seo.service';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,9 @@ export class HomeComponent implements OnInit {
   userPhone:string="";
   userMessage:string="";
 
-  constructor(private _formBuilder:FormBuilder, private firestore:AngularFirestore,private _PostService:ProductViewService){
+  constructor(private _formBuilder:FormBuilder, private firestore:AngularFirestore,private _PostService:ProductViewService,
+    private seo : SeoService ){
+
     this.userContactForm = this._formBuilder.group({
       userName:['',[Validators.required]],
       userEmail:['',[Validators.required,Validators.email]],
@@ -35,6 +38,12 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.seo.generateTags({
+      title: 'Portfolio',
+      description: 'Angular Web Developer Portfolio & Blog',
+      image: 'https://my-portfolio-4ff3c.web.app/assets/icons/favicon.ico',
+    })
 
     let options = {
       strings: [" Aman", "Developer", "Designer"],
