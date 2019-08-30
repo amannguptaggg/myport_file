@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule, AngularFirestore} from '@angular/fire/firestore';
 import {environment} from '../environments/environment';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +17,8 @@ import { AdminAuthService } from './admin-auth.service';
 import {FormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SeoService } from './seo.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     ReactiveFormsModule,
-    CKEditorModule,
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [ProductViewService,AdminAuthGuard,AdminAuthService,AngularFirestore],
+  providers: [ProductViewService,AdminAuthGuard,AdminAuthService,AngularFirestore,SeoService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

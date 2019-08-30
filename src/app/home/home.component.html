@@ -4,10 +4,10 @@
       <p class="headTextName">I Am  <span class="typing-element spanTxt"></span></p>
      </div>
      <div class="ProfileLinkBox">
-       <a href="https://www.facebook.com/amannguptaggg" target="_blank" class="borderBox"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-       <a href="https://twitter.com/aman_gupta_dev" target="_blank" class="borderBox"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-       <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=amannguptaggg@gmail.com" target="_blank" class="borderBox"><i class="fa fa-envelope " aria-hidden="true"></i></a>
-       <a href="https://github.com/amannguptaggg" target="_blank" class="borderBox"><i class="fa fa-github" aria-hidden="true"></i></a>
+       <a href="https://www.facebook.com/amannguptaggg" target="_blank" rel="noreferrer" class="borderBox"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+       <a href="https://twitter.com/aman_gupta_dev" target="_blank" rel="noreferrer" class="borderBox"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+       <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=amannguptaggg@gmail.com" target="_blank" rel="noreferrer" class="borderBox"><i class="fa fa-envelope " aria-hidden="true"></i></a>
+       <a href="https://github.com/amannguptaggg" target="_blank" rel="noreferrer" class="borderBox"><i class="fa fa-github" aria-hidden="true"></i></a>
       </div>
  </div> 
  <div class="scrolldown">
@@ -47,9 +47,9 @@
     <div class="aboutMeBox">
        <p class="aboutHeading">About Me</p>
        <p class="aboutText">Since my graduation I just fell down in progamming world and I started learning programming.First programming language
-         I learnd was C programming. After that I decided to learn web development and app development.So I started my
-         PHP traning in my own city during summer vecation and then learnd Android App Development.<br>
-         After I got familiar with SPA(Single Page Application) & PWA(Progressive Web App), I just fell down in love and started to learnd Angular Framework.
+         I learned was C programming. After that I decided to learn web development and app development.So I started my
+         PHP traning in my own city during summer vecation and then learned Android App Development.<br>
+         After I got familiar with SPA(Single Page Application) & PWA(Progressive Web App), I just fell down in love and started to learn Angular framework.
          Now I am a Angular Developer.
        <div class="aboutMeBtns">
          <a type="button" class="contactBtn" href="#contact">Contact Me</a>
@@ -65,8 +65,8 @@
      <div class="col-lg-2"></div>
      <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 mySkills">
          <p class="skillHeading">My Skills</p> <br>
-         <p class="skillText">Single Page Application is my main experties. I am a full stack web developer in Angular Freamework with neat and
-           clean desining and fully responsive pages using Bootstrap,JQuery,Material Designs and SEO friendly.
+         <p class="skillText">Single Page Application is my main experties. I am a full stack web developer in Angular framework with neat and
+           clean designing and fully responsive web pages using Bootstrap,JQuery,Material Designs and SEO friendly.
          </p>
          </div>
      <div class="col-lg-2"></div>
@@ -121,9 +121,9 @@
                 <div class="card-deck card-g">
                   <ng-container *ngFor="let recentPost of recentPost | async">
                   <div class="card blog-card">
-                    <img class="card-img-top" src="{{recentPost.blogImageLink}}" alt="{{recentPost.alt}}">
+                    <img class="card-img-top" src="{{recentPost.blogImageLink}}" alt="{{recentPost.imgSrc}}">
                     <div class="card-body">
-                      <a routerLink="/blog/post/{{recentPost.id}}" routerLinkActive="active"><p class="card-ttl">{{recentPost.blogTitle}}</p></a>
+                      <a routerLink="/blog/post/{{recentPost.postURL}}" routerLinkActive="active"><p class="card-ttl">{{recentPost.blogTitle}}</p></a>
                       <small class="published-txt">Published: {{recentPost.published.toDate() | date: 'fullDate'}}</small>
                     </div>
                   </div>

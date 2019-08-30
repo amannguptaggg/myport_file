@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
 }
- 
+  
 #myBtn{
     display: none;
     position: fixed;
@@ -30,10 +30,72 @@
     padding: 10px;
     margin-left:10px;
 }
-
-
-
 #myBtn:hover{
     background-color:#0039cb;
     color: #fffffb;
 }
+/* Email Popup */
+#list-builder {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.71);
+    opacity: 0.7;
+    display: none;
+}
+
+
+#popup-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 10000;
+    display: none;
+  }
+  
+  .modal-content {
+    background-color: rgba(38, 38, 40, 0.94);
+    color: #fff;
+    padding: 20px 40px;
+  }
+  
+  .modal-content input {
+    height: 57px;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  
+  .modal-content .btnn-primary{
+    width: 100%;
+    background-color: #ef9919;
+    border: 0px;
+    text-transform: uppercase;
+    color: #fffffb;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+  }
+  
+  .modal-content .btnn-primary:hover {
+    background-color: #0073b7;
+    border: 0px;
+  }
+  
+  .close {
+    position: absolute;
+    padding: 2px;
+    background-color: #fffffb;
+    box-sizing: border-box;
+    right: 0px;
+    top: 0px;
+    color: #1b0000;
+    opacity: .92;
+  }

@@ -35,9 +35,9 @@
             <div class="recentPosts">
               <div class="row blogPost-tile" *ngFor="let post of page.data| async">
                 <div class="col-12 blogpost-list">
-                  <img src="{{post.blogImageLink}}" class="thumbanilImage">
-                  <a [routerLink]="['post',post.id]" routerLinkActive="active"
-                    class="blog-title"> {{post.blogTitle}} </a>
+                  <img src="{{post.blogImageLink}}" class="thumbanilImage" alt="{{post.imgSrc}}">
+                  <a [routerLink]="['post',post.postURL]" routerLinkActive="active"
+                    class="blog-title"> {{post.blogTitle}}</a>
                   <div class="blog-category-type">
                     <div class="post-date">
                       Published: {{post.published.toDate() | date: 'fullDate'}}

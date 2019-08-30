@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
+    font-size: 52px;
 }
 .blog-type{
     font-family: 'Times New Roman', Times, serif;
@@ -45,8 +45,56 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 10px 10px;
     font-size: 19px;
-    font-weight: 100;
     line-height: 1.8;
+}
+.blogCo{
+  position: relative;
+}
+.blogCo img{
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+.likeBox{
+    margin: 10px 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    position: relative;
+}
+.likeMsg{
+    width: 100%;
+   text-align: center;
+   display: block;
+   font-weight: bold;
+   font-size: 23px;
+}
+.likedPost{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: #1faa00;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 5px 7px;
+    line-height: 2.7;
+    cursor: pointer;
+}
+.unlikedPost{
+    height: 60px;
+    width: 60px;
+    display:flex; 
+    border-radius: 50%;
+    justify-content: center;
+    background-color: #039be5;
+    color: #ffffff;
+    font-size: 20px;
+    margin: 5px 7px;
+    line-height: 2.7;
+    cursor: pointer;
 }
 
 @media only screen and (max-width:515px){
@@ -60,14 +108,15 @@
     padding: 7px;
     }
     .blog-title{
-        font-size: 30px;
-        font-weight: 400;
+        font-size: 33px;
+        font-weight:bold;
     }
     .blog-type{
         font-size: 15px;
     }
     .blog-content{
      font-size: 18px;
+     padding: 10px 5px;
     }
     .catgegory{
         margin-right:5px;

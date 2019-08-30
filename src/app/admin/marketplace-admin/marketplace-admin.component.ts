@@ -17,7 +17,8 @@ export class MarketplaceAdminComponent implements OnInit {
   pro_description:string="";
   pro_price:number=0;
   pro_URL:string="";
-  
+  img_alt:string="";
+
  
   constructor(private _formBuild:FormBuilder,private _fbService:AngularFirestore,private ItemService:BlogCategoryService) {
     this.productForm = this._formBuild.group({
@@ -26,7 +27,8 @@ export class MarketplaceAdminComponent implements OnInit {
       pro_description:['',[Validators.maxLength(500)]],
       pro_price:['',[Validators.required]],
       pro_URL:['',[Validators.required]],
-      ItemCategory:['',[Validators.required]]
+      ItemCategory:['',[Validators.required]],
+      img_alt:['',[Validators.required]]
     });
    }
 

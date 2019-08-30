@@ -1,39 +1,62 @@
 <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 my-4">
-                <p class="admin-blog-heading">Update Blog</p>
-                  <div class="blog-post" *ngIf="BlogPost">
-                      <form [formGroup]="blogUpdatePost" class="blog-form" (ngSubmit)="updatePost(blogUpdatePost.value)">
-                          <div class="blog-type">
+  <div class="row">
+    <div class="col-lg-12 my-4">
+      <p class="admin-blog-heading">Update Blog</p>
+      <div class="blog-post" *ngIf="BlogPost">
+        <form [formGroup]="blogUpdatePost" class="blog-form" (ngSubmit)="updatePost(blogUpdatePost.value)">
+          <div class="blog-type">
 
-    
-                                <div class="form-row">
-                                        <div class="form-group col-md-4">
-                                          <select id="blogType" class="blog-form-input" [(ngModel)]="BlogPost.blogCategory" formControlName="blogCategory">
-                                            <option selected *ngFor="let cat of AllCategory">{{cat.blogCategory}}</option>
-                                          </select>
-                                        </div>
-    
-                                        <div class="form-group col-md-3">
-                                                <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.blogAuthor" id="author" placeholder="Author Name" formControlName="blogAuthor">
-                                              </div>
-                                            </div>
-                                      </div>
-                          <div class="blog-title">
-                              <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.blogTitle" formControlName="blogTitle"  placeholder="Give a title of Blog" >
-                          </div>
-                          <div class="blog-content">
-                              <ckeditor tagName="textarea" class="blog-area" id="blog-area" [editor]="Editor" [(ngModel)]="BlogPost.blogContent" formControlName="blogContent"  placeholder="Write Your Content Here"></ckeditor>
-                          </div>
-                          <div class="blog-title">
-                              <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.blogImageLink" formControlName="blogImageLink"  placeholder="Give Blog Image Link" required>
-                          </div>
-                          
-                        <div class="submitBtn">
-                            <button type="submit" class="btn btn-block btn-success" [disabled]="!blogUpdatePost.valid">Save Blog</button>
-                        </div>
-                      </form>
-                  </div>
-                </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <select id="blogType" class="blog-form-input" [(ngModel)]="BlogPost.blogCategory"
+                  formControlName="blogCategory">
+                  <option selected *ngFor="let cat of AllCategory">{{cat.blogCategory}}</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.blogAuthor" id="author"
+                  placeholder="Author Name" formControlName="blogAuthor">
+              </div>
+              <div class="form-group col-md-5">
+                <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.imgSrc" id="author" placeholder="image src"
+                  formControlName="imgSrc" required autocomplete="off">
+              </div>
             </div>
-        </div>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.keywords" id="keywords" placeholder="keywords"
+                  formControlName="keywords" required>
+              </div>
+            </div>
+          </div>
+          <div class="blog-title">
+            <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.blogTitle" formControlName="blogTitle"
+              placeholder="Give a title of Blog">
+          </div>
+          <div class="blog-title">
+            <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.postURL" formControlName="postURL"
+              placeholder="Edit Post URL">
+          </div>
+          <div class="blog-title">
+            <input type="text" class="blog-form-input" [(ngModel)]="BlogPost.blogImageLink"
+              formControlName="blogImageLink" placeholder="Give Blog Image Link" required>
+          </div>
+          <div class="blog-title">
+            <textarea  class="blog-form-input" [(ngModel)]="BlogPost.description"
+              formControlName="description" placeholder="Give description in 200 char" required> </textarea>
+          </div>
+          <div class="blog-content">
+          <textarea [ngxSummernote]="config" [(ngModel)]="BlogPost.blogContent" id="blog-area" formControlName="blogContent" placeholder="Update Your Content Here" required > </textarea>
+          </div>
+
+          <div class="submitBtn">
+            <button type="submit" class="btn btn-block btn-success" [disabled]="!blogUpdatePost.valid">Save
+              Blog</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

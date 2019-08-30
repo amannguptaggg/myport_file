@@ -20,23 +20,23 @@ const routes: Routes = [
         component: BlogHomeComponent,
       },
       {
-        path: 'post/:id',
+        path: 'post/:title',
         component: BlogPostsComponent,
       },
       {
-        path: 'new-tech/new-tech-post/:id',
+        path: 'new-tech/new-tech-post/:title',
         component:BlogPostsComponent,
       },
       {
-        path: 'digital-marketing/digital-marketing-post/:id',
+        path: 'digital-marketing/digital-marketing-post/:title',
         component:BlogPostsComponent,
       },
       {
-        path: 'business/business-post/:id',
+        path: 'business/business-post/:title',
         component:BlogPostsComponent,
       },
       {
-        path: 'how-to/how-to-post/:id',
+        path: 'how-to/how-to-post/:title',
         component:BlogPostsComponent,
       },
       {

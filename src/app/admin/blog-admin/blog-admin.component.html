@@ -1,39 +1,60 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12 my-4">
-            <p class="admin-blog-heading">Write Blog</p>
-              <div class="blog-post">
-                  <form [formGroup]="blogPost" class="blog-form" (ngSubmit)="submitBlog(blogPost.value)">
-                      <div class="blog-type">
+  <div class="row">
+    <div class="col-lg-12 my-4">
+      <p class="admin-blog-heading">Write Blog</p>
+      <div class="blog-post">
+        <form [formGroup]="blogPost" class="blog-form" (ngSubmit)="submitBlog(blogPost.value)">
+          <div class="blog-type">
 
-                            <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                      <select id="blogType" class="blog-form-input" formControlName="blogCategory" required>
-                                        <option selected [ngValue]="null">Choose Category</option>
-                                        <option *ngFor="let cat of AllCat">{{cat.category}}</option>
-                                      </select>
-                                    </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <select id="blogType" class="blog-form-input" formControlName="blogCategory" required>
+                  <option selected [ngValue]="null">Choose Category</option>
+                  <option *ngFor="let cat of AllCat">{{cat.category}}</option>
+                </select>
+              </div>
 
-                                    <div class="form-group col-md-3">
-                                            <input type="text" class="blog-form-input" id="author" placeholder="Author Name" formControlName="blogAuthor" required>
-                                          </div> 
-                                        </div>
-                                  </div>
-                      <div class="blog-title">
-                          <input type="text" class="blog-form-input" formControlName="blogTitle" placeholder="Give a title of Blog" required>
-                      </div>
-                      <div class="blog-content">
-                          <ckeditor tagName="textarea" class="blog-area" id="blog-area" [editor]="Editor" formControlName="blogContent" placeholder="Write Your Content Here" required></ckeditor>
-                      </div>
-                      <div class="blog-title">
-                          <input type="text" class="blog-form-input" formControlName="blogImageLink" placeholder="Give Blog Image Link" required>
-                      </div>
-                      
-                    <div class="submitBtn">
-                        <button type="submit" class="btn btn-block btn-success" [disabled]="!blogPost.valid">Post Blog</button>
-                    </div>
-                  </form>
+              <div class="form-group col-md-3">
+                <input type="text" class="blog-form-input" id="author" placeholder="Author Name"
+                  formControlName="blogAuthor" required>
+              </div>
+              <div class="form-group col-md-5">
+                <input type="text" class="blog-form-input" id="author" placeholder="image src"
+                  formControlName="imgSrc" required autocomplete="off">
+              </div> 
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" class="blog-form-input" id="keywords" placeholder="enter keywords"
+                  formControlName="keywords" required>
               </div>
             </div>
-        </div>
+          </div>
+          <div class="blog-title">
+            <input type="text" class="blog-form-input" formControlName="blogTitle" placeholder="Give a title of Blog"
+              required>
+          </div>
+          <div class="blog-title">
+            <input type="text" class="blog-form-input" formControlName="postURL" placeholder="Enter Post URL"
+              required>
+          </div>
+          <div class="blog-title"> 
+            <input type="text" class="blog-form-input" formControlName="blogImageLink"
+              placeholder="Give Blog Image Link" required>
+          </div> 
+          <div class="blog-title">
+            <textarea class="blog-form-input" formControlName="description"
+              placeholder="Give description in 200 char" required> </textarea>
+          </div> 
+          <div class="blog-content">
+              <textarea id="blog-area" [ngxSummernote]="config" formControlName="blogContent" placeholder="Write Your Content Here" required > </textarea>
+          </div>
+
+          <div class="submitBtn">
+            <button type="submit" class="btn btn-block btn-success" [disabled]="!blogPost.valid">Post Blog</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+</div>

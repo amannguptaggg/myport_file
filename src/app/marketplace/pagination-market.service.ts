@@ -12,13 +12,13 @@ interface QueryConfig{
   limit?:number;
   reverse?:boolean;
   prepend?:boolean;
-} 
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class PaginationService {
-   
+export class PaginationMarketService {
+
   //source data
   private _done = new BehaviorSubject(false);
   private _loading= new BehaviorSubject(false);
@@ -36,7 +36,7 @@ export class PaginationService {
     this.query = {
       path,
       field,
-      limit:4,
+      limit:6,
       reverse: false,
       prepend: false,
       ...opts

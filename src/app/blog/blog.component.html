@@ -1,14 +1,11 @@
 <nav class="navbar navbar-expand-lg fixed-top blog-Nav justify-content-between">
-  <a class="navbar-brand ml-3" href="index.html"><img src="../../assets/icons/favicon-32x32.png"></a>
+  <a class="navbar-brand ml-3" href="index.html"><img src="../../assets/icons/favicon-32x32.png" alt="aman-g.com-icon"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span><i class="fa fa-bars" aria-hidden="true" style="color:#ffffffff;font: size 35px;"></i></span>
   </button>
 
   <div class="collapse navbar-collapse blog-catgeory" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a href="index.html">Portfolio</a>
-      </li>
       <li class="nav-item">
         <a href="/blog">Blog</a> 
       </li> 
@@ -27,8 +24,11 @@
       <li class="nav-item">
         <a routerLink="/marketplace" routerLinkActive="active">Marketplace</a> 
       </li>
+      <li class="nav-item">
+        <a href="index.html">Portfolio</a>
+      </li>
     </ul>
-  </div>
+  </div> 
 </nav>
 <div class="container-fluid m-0 p-0">
     <div class="row">
@@ -41,13 +41,14 @@
               <router-outlet> </router-outlet>
                 </div>
                 <div class="col-lg-3 col-md-3  col-sm-12 mt-2 pl-1">
+                  <!-- recent post -->
                   <div class="recent-border">
                      <p class="recentPost-heading">5 Recently Posted</p>
                         <div class="row blogPost-tile" *ngFor="let recentPost of recentPost | async">
                                 <div class="col-12 blogpostLink-list">
-                                 <div><img src="{{recentPost.blogImageLink}}" class="thumbanil-LinkImage" data-scale="best-fit-down">
-                                  <a [routerLink]="['post/',recentPost.id]" routerLinkActive="active" class="blogLink-title">
-                                    {{recentPost.blogTitle}} </a>
+                                 <div><img src="{{recentPost.blogImageLink}}" class="thumbanil-LinkImage" data-scale="best-fit-down" alt="{{recentPost.imgSrc}}">
+                                  <a [routerLink]="['post/',recentPost.postURL]" routerLinkActive="active" class="blogLink-title">
+                                    {{recentPost.blogTitle}}</a>
                                   <div class="blogLink-category-type">
                                     <div class="post-date">
                                       Published: {{recentPost.published.toDate() | date: 'fullDate'}}
@@ -60,6 +61,19 @@
                                 </div>
                               </div>
                           </div>
+                  </div>
+                  <!-- recent end -->
+                  <!-- subscribe form -->
+                  <div class="subscribeUs">
+                    <p class="recentPost-heading">Subscribe</p>
+                      <form [formGroup]="SubscribeEmail" (ngSubmit)="EmailSubscribe(SubscribeEmail.value)" id="footer-form">
+                          <div class="row">
+                            <div class="col-12">
+                              <input class="form-input" formControlName="SubscribeUs" autocomplete="email" name="email" placeholder="Enter your awesome email" required>
+                            </div>
+                          </div>
+                          <input type="submit" [disabled]="!SubscribeEmail.valid" class="subsBtn" value="Subscribe">
+                        </form>
                   </div>
             </div>
            

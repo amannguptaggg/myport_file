@@ -9,10 +9,11 @@ import { CatOneComponent } from './cat-one/cat-one.component';
 import { CatTwoComponent } from './cat-two/cat-two.component';
 import { CatThreeComponent } from './cat-three/cat-three.component';
 import { CatFourComponent } from './cat-four/cat-four.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 
 @NgModule({
-  declarations: [MarketHomeComponent,MarketplaceComponent, CatOneComponent, CatTwoComponent, CatThreeComponent, CatFourComponent],
+  declarations: [MarketHomeComponent,MarketplaceComponent, CatOneComponent, CatTwoComponent, CatThreeComponent, CatFourComponent, LoadingSpinnerComponent],
   imports: [
     CommonModule,
     MarketplaceRoutingModule

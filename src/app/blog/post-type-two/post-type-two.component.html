@@ -10,8 +10,8 @@
                 <div class="recentPosts">
                   <div class="row blogPost-tile" *ngFor="let post of postType ">
                     <div class="col-12 blogpost-list">
-                      <img src="{{post.blogImageLink}}" class="thumbanilImage">
-                      <a [routerLink]="['digital-marketing-post',post.id]" routerLinkActive="active"
+                      <img src="{{post.blogImageLink}}" class="thumbanilImage" alt="{{post.imgSrc}}">
+                      <a [routerLink]="['digital-marketing-post',post.postURL]" routerLinkActive="active"
                         class="blog-title"> {{post.blogTitle}} </a>
                       <div class="blog-category-type">
                         <div class="post-date">

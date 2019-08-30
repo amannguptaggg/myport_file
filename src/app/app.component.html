@@ -1,4 +1,29 @@
 <router-outlet> 
   
 </router-outlet>
-<button  id="myBtn" title="Go to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+<button  id="myBtn" title="Go to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button> 
+
+<!-- Email popup -->
+<div id="list-builder"></div>
+<div id="popup-container">
+        <div id="popup-window">
+          <div class="modal-content">
+            <button type="button" class="close" (click)="setCookie()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>  
+            <a href="#" class="your-class"></a>
+          <div>
+          <div class="text-center">
+            <h1>Subscribe Newsletter</h1>
+            <p>Never miss latest post updates and amazing offers!</p>
+          </div>
+          <form [formGroup]="SubscribeEmails" (ngSubmit)="userEmailSubscribe(SubscribeEmails.value)" id="footer-form">
+            <div class="row">
+              <div class="col-12">
+                <input class="form-control" formControlName="SubscribeEmail" autofocus autocomplete="email" name="email" placeholder="Enter your awesome email" required>
+              </div>
+            </div>
+            <input type="submit" (click)="emailSaved()" [disabled]="!SubscribeEmails.valid" class="btn btnn-primary" value="Subscribe">
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>

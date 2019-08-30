@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
 import { FormGroup,FormBuilder,Validators,NgForm } from '@angular/forms';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {AngularFirestore} from '@angular/fire/firestore'
 import { Post } from 'src/app/post';
 import { BlogCategoryService } from '../blog-category.service';
@@ -15,17 +14,24 @@ export class UpdateComponent implements OnInit {
   BlogPost:Post;
   blogUpdatePost:FormGroup;
   AllCategory:Array<any>;
-  public Editor = ClassicEditor;
+  
+  config:any = {
+    height: '500px'
+  }
 
   constructor(private _formBuildupdate:FormBuilder,private route:ActivatedRoute,private BlogService:BlogCategoryService,private afs:AngularFirestore,private router:Router) {
     this.blogUpdatePost = this._formBuildupdate.group({
 
       blogCategory:[null,[Validators.required]],
       blogTitle: ['',[Validators.required]],
+      postURL:['',[Validators.required]],
       blogContent: ['',[Validators.required]],
       blogAuthor: ['',[Validators.required]],
       blogImageLink:['',[Validators.required]],
-      published: new Date(),
+      imgSrc:['',[Validators.required]],
+      keywords:['',[Validators.required]],
+      description:['',[Validators.required,Validators.maxLength(200)]],
+      updated: new Date(),
     
     });
   }

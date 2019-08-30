@@ -3,12 +3,14 @@ import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} fr
 import {Post} from './post';
 import 'rxjs-compat/add/operator/map';
 import { Item } from './marketplace/item';
+import 'rxjs-compat/operator/take';
+import {Observable} from 'rxjs-compat';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductViewService {
-  postDoc:AngularFirestoreDocument<Post>;
+  postDoc:AngularFirestoreCollection<Post>;
   postCollection:AngularFirestoreCollection<Post>;
   postRecentCollection:AngularFirestoreCollection<Post>;
   itemCollection:AngularFirestoreCollection<Item>
@@ -32,7 +34,7 @@ export class ProductViewService {
         return { id, ...data} 
       })
     })
-  }
+  } 
 
   getAllRecentBlogPost() {
     return this.postRecentCollection.snapshotChanges().map(actions=>{
@@ -44,9 +46,15 @@ export class ProductViewService {
     })
   }
 
-  getPostData(id:string) {
-    this.postDoc = this._fb.doc('blogPost/'+id);
-    return this.postDoc.valueChanges();
+  getPostData(title:string) {
+    return this._fb.collection('blogPost',ref=>ref.where("postURL",'==',title)).snapshotChanges()
+    .map(snap=>{
+      return snap.map(snapD=>{
+         const id = snapD.payload.doc.id;
+         const data = snapD.payload.doc.data() as Post;
+         return {id , ...data}
+      })
+    })
   }
 
   loadPostType(blogType:string){

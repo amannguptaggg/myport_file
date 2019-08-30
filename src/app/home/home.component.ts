@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl,FormBuilder,NgForm,Validators} from '@angular/forms';
+import {FormGroup,FormBuilder,NgForm,Validators} from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as $ from 'jquery';
 import Typed from 'typed.js'
@@ -40,9 +40,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.seo.generateTags({
-      title: 'Portfolio',
-      description: 'Angular Web Developer Portfolio & Blog',
-      image: 'https://my-portfolio-4ff3c.web.app/assets/icons/favicon.ico',
+      title: 'Angular Web Developer || Portfolio, Blog, Marketplace',
+      description: 'Full Stack Angular Web App Developer With Modern Look and feel,fully Responsive Webpages and Single Page SEO Expert,Google Analytics, Firebase and Many More...',
+      image: 'https://aman-g.com/assets/icons/favicon.ico',
+      keywords: 'aman-g.com, angular web developer , digital marketing , seo , angular firebase , advertise on google, web developer , portfolio',
     })
 
     let options = {

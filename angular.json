@@ -22,15 +22,21 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/sitemap.xml",
+              "src/robots.txt",
+              "src/BingSiteAuth.xml",
+              "src/yandex_bf51f358666d6307.html"
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/summernote/dist/summernote-lite.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/typed.js/lib/typed.min.js"
+              "./node_modules/typed.js/lib/typed.min.js",
+              "./node_modules/summernote/dist/summernote-lite.js"
             ]
           },
           "configurations": {

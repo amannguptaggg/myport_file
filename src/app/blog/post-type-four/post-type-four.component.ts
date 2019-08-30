@@ -22,6 +22,7 @@ export class PostTypeFourComponent implements OnInit {
             blogContent:pst.payload.doc.data()['blogContent'],
             blogImageLink:pst.payload.doc.data()['blogImageLink'],
             blogTitle:pst.payload.doc.data()['blogTitle'],
+            postURL:pst.payload.doc.data()['postURL'],
             published:pst.payload.doc.data()['published']
           }
         })

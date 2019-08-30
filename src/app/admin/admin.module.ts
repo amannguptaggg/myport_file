@@ -11,21 +11,22 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { UserListService } from './user-list.service';
 import { PostSettingsComponent } from './post-settings/post-settings.component';
 import { BlogCategoryService } from './blog-category.service';
-import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { UpdateComponent } from './update/update.component';
+import {NgxSummernoteModule} from 'ngx-summernote'
 
 import {AngularFirestoreModule} from '@angular/fire/firestore'
 import {AngularFireAuthModule} from '@angular/fire/auth'; 
-
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [BlogAdminComponent, MarketplaceAdminComponent, UserContactAdminComponent, HomeAdminComponent,AdminComponent, PostSettingsComponent, UpdateComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    CKEditorModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgxSummernoteModule,
+    HttpClientModule
   ],
   providers:[UserListService,BlogCategoryService]
 })

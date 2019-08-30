@@ -11,6 +11,10 @@ import { PostTypeThreeComponent } from './post-type-three/post-type-three.compon
 import { PostTypeFourComponent } from './post-type-four/post-type-four.component';
 import { ScrollableDirective } from '../scrollable.directive';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxSummernoteModule} from 'ngx-summernote';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,15 +26,17 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     PostTypeThreeComponent,
     PostTypeFourComponent,
     ScrollableDirective,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
   ],
   imports: [
     CommonModule,
     BlogRoutingModule,
-     
+    NgxSummernoteModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers:[]
 })
 
-export class BlogModule { constructor(){console.log('blog module is loaded')}}
+export class BlogModule {}
 

@@ -1,4 +1,6 @@
 import {Component,OnInit} from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { SeoService } from '../seo.service';
 
 @Component({
     selector: 'app-marketplace',
@@ -7,11 +9,9 @@ import {Component,OnInit} from '@angular/core';
 })
 
 export class MarketplaceComponent implements OnInit{
-    
     constructor(){}
  
     ngOnInit(){
-       
         $(document).ready(function () {
             $(document).click(
                 function (event) {
@@ -23,12 +23,5 @@ export class MarketplaceComponent implements OnInit{
                 }
             );
         })
-    }
-
-    ToggleNavBar () {
-        let element: HTMLElement = document.getElementsByClassName( 'navbar-toggler' )[ 0 ] as HTMLElement;
-        if ( element.getAttribute( 'aria-expanded' ) == 'true' ) {
-            element.click();
-        }
     }
 }

@@ -3,6 +3,39 @@
     margin: 0; 
     padding: 0;
 }
+
+/* Loading Spinner Css */
+.blog-bdy{
+    max-height:100vh;
+    overflow-y: hidden;
+}
+.items{
+    max-height:96vh;
+    overflow-y: auto;
+}
+.items::-webkit-scrollbar{
+    width: 8px;
+}
+.items::-webkit-scrollbar-thumb{
+    background-color: #616161;
+    width: 5px;
+    border-radius: 10px;
+}
+.items::-webkit-scrollbar-track{
+    background-color:#bdbdbd;
+}
+.data-end{
+    display: flex;
+    justify-content: center;
+    padding: 5px 10;
+    width: 100%;
+    background-color: #bdbdbd;
+    color: black;
+    margin: 10px 0px;
+}
+
+/* items Css */
+
 .items-list{
     display: flex;
     justify-content: center;
@@ -150,7 +183,7 @@
    }
    .btn-buy{
        padding:3px 5px;
-       font-size: 15px;
+       font-size: 15px; 
    }
    .btn-details{
        padding:0px 5px;

@@ -3,7 +3,8 @@ import { ProductViewService } from '../product-view.service';
 import { Observable } from 'rxjs-compat';
 import { Post } from '../post';
 import * as $ from 'jquery';
-import { SeoService } from '../seo.service';
+import {FormBuilder, FormGroup, NgForm , Validators} from '@angular/forms'
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-blog',
@@ -11,18 +12,16 @@ import { SeoService } from '../seo.service';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  recentPost:Observable<Post[]>; 
-  
-  constructor(private _PostService:ProductViewService , private seo:SeoService){}
+  recentPost:Observable<Post[]>;
+  SubscribeEmail:FormGroup;
+  constructor(private _PostService:ProductViewService ,private subForm:FormBuilder, private afSS:AngularFirestore){
+
+    this.SubscribeEmail = this.subForm.group({
+      SubscribeUs:['',[Validators.required,Validators.email]]
+    });
+  }
   
   ngOnInit(){
-
-    this.seo.generateTags({
-      title: 'AmannG.com/blog',
-      description: 'Articles you will get related to Digital Marketing , Business , New Tech , how to ',
-      image: 'https://my-portfolio-4ff3c.web.app/assets/icons/favicon.ico',
-    })
-
     this.recentPost = this._PostService.getAllRecentBlogPost();
    
 
@@ -40,5 +39,16 @@ export class BlogComponent implements OnInit {
   
   }
 
+  EmailSubscribe(SubscribeEmail:NgForm){
+     
+    this.afSS.collection('SubscriptionsEmail').add(SubscribeEmail);
+    alert('Your Email is saved !\nThank You For Subscription');
+    this.resetSubscribeForm();
+    }
+   
+    resetSubscribeForm(){
+      this.SubscribeEmail.reset();
+    }
 
+ 
 }
