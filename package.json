@@ -25,7 +25,7 @@
     "@ng-toolkit/universal": "^1.1.21",
     "bootstrap": "^4.3.1",
     "firebase": "^6.3.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-cookie-service": "^2.2.0",
     "ngx-summernote": "^0.6.5",
     "rxjs": "~6.4.0",
